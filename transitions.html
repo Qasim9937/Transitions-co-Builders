@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TAYARi.Transitions — Co-Builders Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#f1f1f1] text-[#333333]">
+  <!-- Modal Login -->
+  <div id="loginModal" class="fixed inset-0 bg-gray-200 bg-opacity-99 flex items-center justify-center z-50">
+    <div class="bg-white p-8 rounded-2xl shadow-xl max-w-sm w-full">
+      <h2 class="text-2xl font-bold text-[#0a2e51] mb-4">Sign In</h2>
+      <!-- HTML INPUT FIX -->
+<form id="loginForm" class="space-y-4">
+  <div>
+    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+    <input type="email" id="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" required />
+  </div>
+  <div>
+    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+    <input type="password" id="password" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" required />
+  </div>
+  <button type="submit" class="bg-[#c29b1b] text-white w-full py-2 rounded-md font-semibold hover:bg-gold-700">Login</button>
+  <p id="errorText" class="text-red-600 text-sm hidden">Incorrect email or password.</p>
+</form>
+
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="bg-white fixed top-0 left-0 right-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <div class="text-xl font-bold text-[#0a2e51]">TAYARi.Transitions</div>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#vision" class="text-[#0a2e51] hover:text-[#d21b1b] font-medium">Vision</a>
+        <a href="#pillars" class="text-[#0a2e51] hover:text-[#d21b1b] font-medium">Pillars</a>
+        <a href="#map" class="text-[#0a2e51] hover:text-[#d21b1b] font-medium">Ecosystem Map</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-[#0a2e51] text-white min-h-screen flex items-center justify-center px-6 py-40 relative">
+    <div class="max-w-4xl text-center">
+      <h1 class="text-5xl md:text-6xl font-extrabold uppercase leading-tight mb-6 tracking-wide">An African-led Social Enterprise</h1>
+      <p class="text-2xl md:text-3xl font-medium mb-8">Transforming the continent’s employability and entrepreneurship landscape</p>
+      <a href="#vision" class="inline-block bg-[#f1cd30] text-[#0a2e51] font-semibold text-lg px-8 py-4 rounded-full hover:bg-[#e6bb00] transition">Co-Build to Co-Own</a>
+    </div>
+  </section>
+
+  <!-- Vision & Problem Context -->
+  <section id="vision" class="bg-white py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl font-bold text-[#0a2e51] mb-6">Vision & Problem Context</h2>
+      <p class="text-lg text-[#333] mb-4">TAYARi.Transitions addresses the deep-rooted challenges facing youth employability and entrepreneurship in Africa. Our vision is to build inclusive, empowered futures by transforming the talent and innovation ecosystem.</p>
+      <a href="#" class="text-[#d21b1b] font-bold hover:underline">Read full context document →</a>
+    </div>
+  </section>
+
+  <!-- Transitions Engine -->
+  <section id="pillars" class="bg-[#f1f1f1] py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-[#0a2e51] mb-12">The Transitions Engine: Three Core Pillars</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="bg-white p-8 rounded-3xl shadow-md hover:shadow-lg transition">
+          <h3 class="text-2xl font-semibold text-[#d21b1b] mb-4">Talent Incubator & Employability Accelerator</h3>
+          <p class="mb-4">Equipping talent with market-relevant skills through mentorship, placements, and future-proof training.</p>
+          <a href="#" class="text-[#50c878] font-semibold hover:underline">Learn more →</a>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow-md hover:shadow-lg transition">
+          <h3 class="text-2xl font-semibold text-[#d21b1b] mb-4">Venture Studio</h3>
+          <p class="mb-4">Supporting high-potential founders from concept to scale via incubation and acceleration programs.</p>
+          <a href="#" class="text-[#50c878] font-semibold hover:underline">Learn more →</a>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow-md hover:shadow-lg transition">
+          <h3 class="text-2xl font-semibold text-[#d21b1b] mb-4">TAYARi.Angels Capital</h3>
+          <p class="mb-4">Providing catalytic funding through angel investors and co-builder capital networks.</p>
+          <a href="#" class="text-[#50c878] font-semibold hover:underline">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Map Placeholder -->
+  <section id="map" class="bg-white py-24 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-4xl font-bold text-[#0a2e51] mb-6">Explore Our Ecosystem</h2>
+      <p class="text-lg text-[#333] mb-12">A dynamic map of partners, programs, and pilot locations across Africa (Coming soon).</p>
+      <div class="w-full h-[400px] bg-gray-200 rounded-2xl border-2 border-dashed border-[#0a2e51] flex items-center justify-center text-[#0a2e51] font-semibold text-lg">
+        Interactive Map Placeholder
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-[#f1cd30] text-[#0a2e51] py-24 px-6 text-center">
+    <h2 class="text-4xl font-bold mb-4">Ready to Co-Create the Future?</h2>
+    <p class="text-xl mb-8">Join our founding cohort of co-builders and shape Africa’s next big leap.</p>
+    <a href="#login" class="bg-[#d21b1b] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-700 transition">Login to Access</a>
+  </section>
+
+  <footer class="bg-[#0a2e51] text-white text-center py-6">
+    <p>&copy; 2025 TAYARi.Transitions. All rights reserved.</p>
+  </footer>
+
+  <!-- FIREBASE & AUTH SCRIPTS -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBBK4ccMH83_Xlba1oZVO3b4AANPdS78Do",
+    authDomain: "tayari-transitions-auth.firebaseapp.com",
+    projectId: "tayari-transitions-auth",
+    storageBucket: "tayari-transitions-auth.appspot.com",
+    messagingSenderId: "356422305168",
+    appId: "1:356422305168:web:de6c9cc923133e31bd1f15"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  const loginForm = document.getElementById("loginForm");
+  const loginModal = document.getElementById("loginModal");
+  const errorText = document.getElementById("errorText");
+  const loginButton = loginForm.querySelector("button");
+
+
+    loginForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+
+  loginButton.disabled = true;
+  loginButton.textContent = "Logging in...";
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      loginModal.style.display = "none";
+    })
+    .catch((error) => {
+      errorText.textContent = "Incorrect email or password.";
+      errorText.classList.remove("hidden");
+
+      loginButton.disabled = false;
+      loginButton.textContent = "Login";
+    });
+});
+
+//   onAuthStateChanged(auth, (user) => {
+//     if (user) {
+//       loginModal.style.display = "none";
+//     } else {
+//       loginModal.style.display = "flex";
+//     }
+//   });
+</script>
+
+
+</body>
+</html>
