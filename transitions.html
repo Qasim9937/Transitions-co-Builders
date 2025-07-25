@@ -21,6 +21,10 @@
       font-family: 'Roboto', sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       display: flex;
       height: 100dvh;
@@ -33,6 +37,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 100px;
       padding: 50px;
     }
 
@@ -54,7 +59,6 @@
       font-size: 34px;
       font-weight: 800;
       margin-bottom: 20px;
-      /* margin-top: -10px ; */
       font-family: 'Montserrat', sans-serif;
     }
 
@@ -64,15 +68,40 @@
       margin-bottom: 6px;
     }
 
-    .highlight {
+    #bottom-left{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .highlight, .highlight-m {
       color: var(--saffron);
       font-weight: bold;
-      /* font-style: italic; */
       font-size: 18px;
       text-transform: uppercase;
     }
 
-    
+    .highlight-m {
+      display: none;
+    }
+
+    .login-scroll-btn {
+      display: none;
+      margin-top: 50px;
+      padding: 10px 16px;
+      background-color: var(--saffron);
+      color: var(--charcoal);
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .login-scroll-btn:hover {
+      background-color: var(--emerald);
+      color: white;
+    }
 
     .right-section {
       background-color: white;
@@ -120,7 +149,7 @@
       outline: 2px solid var(--emerald);
     }
 
-    button {
+    button[type="submit"] {
       width: 100%;
       background-color: var(--saffron);
       color: var(--charcoal);
@@ -133,7 +162,7 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    button:hover {
+    button[type="submit"]:hover {
       background-color: var(--emerald);
       color: white;
     }
@@ -149,6 +178,7 @@
     @media (max-width: 768px) {
       body {
         flex-direction: column;
+        height: 200dvh;
       }
 
       .left-section, .right-section {
@@ -163,7 +193,16 @@
       }
 
       .highlight {
+        display: none;
+      }
+
+      .highlight-m {
         font-size: 16px;
+        display: block;
+      }
+
+      .login-scroll-btn {
+        display: inline-block;
       }
 
       .form-container {
@@ -177,15 +216,22 @@
   <div class="left-section">
     <div id="top-left" style="margin-top: 50px;">
       <img src="GLYPH(1).png" alt="Logo" />
-      <h2>Welcome to the  </h2> 
-      <h1>.transitions co-Builders Hub </h1>
+      <h2>Welcome to the</h2> 
+      <h1>.transitions co-Builders Hub</h1>
     </div>
     
     <div id="bottom-left" style="margin-bottom: 50px">
       <h2>Home of</h2>
       <p class="highlight">Intelligence | Ingenuity | Excellence | Happiness</p>
+      <p class="highlight-m">Intelligence | Ingenuity <br> Excellence | Happiness</p>
+      
+      <!-- Scroll Button -->
+      <button class="login-scroll-btn" onclick="document.getElementById('loginForm').scrollIntoView({ behavior: 'smooth' })">
+        Login ↓
+      </button>
+
+      <!-- <p>Join us in building a brighter future for Africa.</p> -->
     </div>
-    
   </div>
 
   <!-- Right Section -->
