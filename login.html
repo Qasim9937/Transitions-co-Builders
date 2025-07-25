@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – Transitions coBuilders</title>
+  <style>
+    :root {
+      --saffron: #f1cd30;
+      --crimson: #d21b1b;
+      --emerald: #50c878;
+      --prussian: #0a2e51;
+      --charcoal: #333333;
+      --lightgray: #f1f1f1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      display: flex;
+      height: 100dvh;
+      background-color: var(--lightgray);
+      color: var(--charcoal);
+    }
+
+    .left-section, .right-section {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 100px;
+      padding: 50px;
+    }
+
+    .left-section {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+      background: linear-gradient(135deg, var(--prussian), #061f3a);
+      color: white;
+    }
+
+    .left-section img {
+      width: 90px;
+      height: auto;
+      margin-bottom: 24px;
+    }
+
+    .left-section h1 {
+      font-size: 34px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .left-section h2 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    #bottom-left{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .highlight, .highlight-m {
+      color: var(--saffron);
+      font-weight: bold;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+    .highlight-m {
+      display: none;
+    }
+
+    .login-scroll-btn {
+      display: none;
+      margin-top: 50px;
+      padding: 10px 16px;
+      background-color: var(--saffron);
+      color: var(--charcoal);
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .login-scroll-btn:hover {
+      background-color: var(--emerald);
+      color: white;
+    }
+
+    .right-section {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-container {
+      background-color: var(--prussian);
+      color: white;
+      padding: 40px 32px;
+      border-radius: 16px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h3 {
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      background-color: white;
+      color: var(--charcoal);
+    }
+
+    input:focus {
+      outline: 2px solid var(--emerald);
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      background-color: var(--saffron);
+      color: var(--charcoal);
+      font-weight: bold;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: var(--emerald);
+      color: white;
+    }
+
+    .error-text {
+      display: none;
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--crimson);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+        height: 200dvh;
+      }
+
+      .left-section, .right-section {
+        flex: none;
+        width: 100%;
+        height: 50%;
+        padding: 30px 20px;
+      }
+
+      .left-section h1 {
+        font-size: 26px;
+      }
+
+      .highlight {
+        display: none;
+      }
+
+      .highlight-m {
+        font-size: 16px;
+        display: block;
+      }
+
+      .login-scroll-btn {
+        display: inline-block;
+      }
+
+      .form-container {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Left Section -->
+  <div class="left-section">
+    <div id="top-left" style="margin-top: 50px;">
+      <img src="GLYPH(1).png" alt="Logo" />
+      <h2>Welcome to the</h2> 
+      <h1>.transitions co-Builders Hub</h1>
+    </div>
+    
+    <div id="bottom-left" style="margin-bottom: 50px">
+      <h2>Home of</h2>
+      <p class="highlight">Intelligence | Ingenuity | Excellence | Happiness</p>
+      <p class="highlight-m">Intelligence | Ingenuity <br> Excellence | Happiness</p>
+      
+      <!-- Scroll Button -->
+      <button class="login-scroll-btn" onclick="document.getElementById('loginForm').scrollIntoView({ behavior: 'smooth' })">
+        Login ↓
+      </button>
+
+      <!-- <p>Join us in building a brighter future for Africa.</p> -->
+    </div>
+  </div>
+
+  <!-- Right Section -->
+  <div class="right-section">
+    <div class="form-container">
+      <h3>Sign In</h3>
+      <form id="loginForm">
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" required />
+        </div>
+        <button type="submit">Login</button>
+        <p id="errorText" class="error-text">Incorrect email or password.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Firebase Auth Script -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBBK4ccMH83_Xlba1oZVO3b4AANPdS78Do",
+      authDomain: "tayari-transitions-auth.firebaseapp.com",
+      projectId: "tayari-transitions-auth",
+      storageBucket: "tayari-transitions-auth.appspot.com",
+      messagingSenderId: "356422305168",
+      appId: "1:356422305168:web:de6c9cc923133e31bd1f15"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const loginForm = document.getElementById("loginForm");
+    const errorText = document.getElementById("errorText");
+    const loginButton = loginForm.querySelector("button");
+
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      loginButton.disabled = true;
+      loginButton.textContent = "Logging in...";
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          window.location.href = "index.html";
+        })
+        .catch(() => {
+          errorText.style.display = "block";
+          loginButton.disabled = false;
+          loginButton.textContent = "Login";
+        });
+    });
+  </script>
+</body>
+</html>
