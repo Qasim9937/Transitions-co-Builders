@@ -19,7 +19,7 @@ window.addEventListener('scroll', () => {
   
   let currentpos = window.scrollY;
 
-  if(currentpos >= 400){
+  if(currentpos >= 100){
 
     currentpos > prevScrollPos ? navbar.style.display = 'none' : 
     navbar.style.display = 'flex'
@@ -27,7 +27,6 @@ window.addEventListener('scroll', () => {
   }
   else{
     navbar.style.display = 'none'
-    menu2.style.display = 'none'
   }
 
   prevScrollPos = currentpos
