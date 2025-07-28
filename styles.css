@@ -141,7 +141,7 @@
       gap: 20px;
       align-items: center;
     }
-    .navbar a, .footer-div2 a{
+    .navbar a{
       text-decoration: none;
       color: var(--lightgray);
       font-weight: bold;
@@ -273,12 +273,6 @@
       z-index: 9;
       background: var(--prussian);
       color: var(--lightgray);
-      /* background-color: rgba(255, 255, 255, 0.1); */
-      /* backdrop-filter: blur(10px); */
-      /* -webkit-backdrop-filter: blur(12px); */
-      /* border-radius: 10px; */
-      /* box-shadow: 0 8px 20px rgba(0,0,0,0.2); */
-      /* opacity: 0; */
       transition: all 0.3s ease;
       /* transform: translateY(-10px); */
     }
@@ -291,11 +285,11 @@
 
   
     .mobile-menu a {
-      color: white;
+      color: var(--lightgray);
       text-decoration: none;
       padding: 12px 0;
       font-size: 16px;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid var(--prussian);
     }
 
     .mobile-menu #summits{
@@ -391,7 +385,7 @@
     }
 
     #orange-text {
-      color: var(--crimson);
+      color: var(--lightgray);
     }
 
     .intro-text {
@@ -487,6 +481,7 @@
           color: var(--lightgray);
           padding: 30px 50px 100px;
 
+
           a{
             color: var(--saffron);
           }
@@ -529,7 +524,8 @@
       bottom: 200px;
       left: 40px;
       color: white;
-      font-size: 5rem;
+      font-size: 2.5rem;
+      margin: 20px;
       opacity: 0;
       animation: flow-fade-in 0.6s ease forwards;
     }
@@ -558,7 +554,7 @@
     }
     .progress {
       height: 100%;
-      background: var(--prussian);
+      background: var(--saffron);
     }
     .prev, .next {
       position: absolute;
@@ -1050,7 +1046,7 @@
       left: 0;
       height: 100%;
       width: 100%;
-      background-color: var(--prussian);
+      background-color: var(--emerald);
       opacity: 0.7;
       z-index: 1;
     }
@@ -1222,6 +1218,7 @@
           display: flex;
           flex-direction: column;
           gap: 50px;
+          color: var(--crimson);
         }
 
         .footer-div1-div{
@@ -1440,6 +1437,7 @@
 
       #title-text-sect5 {
         font-size: 2.5rem;
+
       }
 
       #div2-sect5 > p {
@@ -1622,7 +1620,6 @@
 
                 p{
                   align-self: center;
-                  color: gray
                 }
         }
       }
