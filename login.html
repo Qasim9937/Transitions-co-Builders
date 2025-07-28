@@ -88,8 +88,8 @@
     .login-scroll-btn {
       display: none;
       margin-top: 50px;
-      padding: 10px 16px;
-      background-color: var(--saffron);
+      padding: 20px;
+      background-color: var(--emerald);
       color: var(--charcoal);
       font-weight: bold;
       border: none;
@@ -97,12 +97,7 @@
       font-size: 16px;
       cursor: pointer;
     }
-
-    .login-scroll-btn:hover {
-      background-color: var(--emerald);
-      color: white;
-    }
-
+ 
     .right-section {
       background-color: white;
       display: flex;
@@ -151,7 +146,7 @@
 
     button[type="submit"] {
       width: 100%;
-      background-color: var(--saffron);
+      background-color: var(--emerald);
       color: var(--charcoal);
       font-weight: bold;
       padding: 12px;
@@ -162,9 +157,14 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    button[type="submit"]:hover {
-      background-color: var(--emerald);
-      color: white;
+    .login-scroll-btn:hover {
+      transform: scale(1.01) translateY(-2px);
+      transition: transform 0.2s ease;
+    }
+
+    button[type="submit"]:active{
+      transform: scale(0.98);
+      transition: transform 0.01s ease;
     }
 
     .error-text {
@@ -239,7 +239,7 @@
     <div class="form-container">
       <div id="login-form-header" style="display: flex; gap: 20px; justify-content: center; align-items: top; margin-bottom: 50px">
   <img src="GLYPH(1).png" alt="Logo" style="width: 50px; height: 50px;"/>
-  <h3 style="font-family: 'Montserrat', sans-serif; font-weight: bold; font-size: 24px; color: white; margin-top: 10px;">Sign In</h3>
+  <h3 style="font-family: 'Montserrat', sans-serif; font-weight: bold; font-size: 24px; color: var(--lightgray); margin-top: 10px;">Sign In</h3>
 </div>
 
 
