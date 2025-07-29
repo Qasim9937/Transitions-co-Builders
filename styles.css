@@ -308,7 +308,7 @@
       flex-wrap: wrap;
       width: 100%;
       position: relative;
-      padding: 50px 0 50px;
+      padding: 30px 0;
       background: var(--prussian);
       color: var(--lightgray);
     }
@@ -316,7 +316,7 @@
 
 
     #div1, #div2 {
-      padding: 10px 0 10px 50px;
+      padding: 10px 50px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -479,7 +479,7 @@
           margin-bottom: 100px;
           background: var(--prussian);
           color: var(--lightgray);
-          padding: 30px 50px 100px;
+          padding: 30px 0px;
 
 
           a{
@@ -491,7 +491,7 @@
             flex-direction: column;
             gap: 50px;
             width: 50%;
-            padding-left: 4%;
+            padding: 10px 30px;
           }
         }
 
@@ -1316,13 +1316,13 @@
         flex-direction: column;
         overflow: hidden;
         height: unset;
-        margin-top: 50px;
+        /* margin-top: 50px; */
         
       }
 
       #div1, #div2 {
         width: 100%;
-        padding: 15px;
+        padding: 30px;
         gap: 20px;
       }
 
@@ -1350,6 +1350,8 @@
         margin-top: 50px;
       }
 
+      
+
       /* #div2 > a {
         font-size: 18px;
         margin-top: 30px;
@@ -1360,12 +1362,13 @@
 
 
       #under-sect2{
-        padding: unset;
+        padding: 0 0 100px;
+        margin-top: -1px;
       }
 
       #under-sect2-div{
         width: 100% !important;
-        padding-left: unset;
+        /* padding-left: unset; */
       }
 
       #sect2-text2 {
@@ -1452,9 +1455,7 @@
         margin-bottom: 100px;
       }
 
-      /* #div2-b4footer{
-  
-      } */
+     
 
       #sect6-wrapper {
         flex-direction: column;
@@ -1544,10 +1545,9 @@
             line-height: 20px;
         }
 
-        #div2-b4footer a{
-          display: block;
+        #black-bg-before-footer{
+          height: 100vh;
         }
-
 
         #black-bg-before-footer p:first-of-type{
             font-size: 3rem;
