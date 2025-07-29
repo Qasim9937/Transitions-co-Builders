@@ -11,7 +11,6 @@ summitDiv.addEventListener('click', () => {
 
 
 
-
 let prevScrollPos = window.scrollY
 
 window.addEventListener('scroll', () => {
