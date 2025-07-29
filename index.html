@@ -301,5 +301,46 @@
 
     typeWord();
   </script>
+
+  <!-- Firebase Auth Script -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBBK4ccMH83_Xlba1oZVO3b4AANPdS78Do",
+      authDomain: "tayari-transitions-auth.firebaseapp.com",
+      projectId: "tayari-transitions-auth",
+      storageBucket: "tayari-transitions-auth.appspot.com",
+      messagingSenderId: "356422305168",
+      appId: "1:356422305168:web:de6c9cc923133e31bd1f15"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const loginForm = document.getElementById("loginForm");
+    const errorText = document.getElementById("errorText");
+    const loginButton = loginForm.querySelector("button");
+
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      loginButton.disabled = true;
+      loginButton.textContent = "Logging in...";
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          window.location.href = "landing.html";
+        })
+        .catch(() => {
+          errorText.style.display = "block";
+          loginButton.disabled = false;
+          loginButton.textContent = "Login";
+        });
+    });
+  </script>
 </body>
 </html>
