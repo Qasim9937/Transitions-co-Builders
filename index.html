@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login – Transitions coBuilders</title>
+  <title>Login – TAYARi.Transitions</title>
   <style>
     :root {
       --saffron: #f1cd30;
@@ -21,13 +21,12 @@
       font-family: 'Roboto', sans-serif;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       display: flex;
-      height: 100dvh;
+      min-height: 100dvh;
+      width: 100vw;
       background-color: var(--lightgray);
       color: var(--charcoal);
     }
@@ -37,8 +36,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 100px;
+      gap: 30px;
       padding: 50px;
+      height: 100dvh;
+      width: 50%;
     }
 
     .left-section {
@@ -65,30 +66,36 @@
     .left-section h2 {
       font-size: 22px;
       font-weight: 600;
-      margin-bottom: 6px;
     }
 
-    #bottom-left{
+    .tagline {
+      font-size: 16px;
+      max-width: 400px;
+      line-height: 1.5;
+    }
+
+    /* ✅ Typewriter Section */
+    #typewriter-container {
+      height: 30px;
       display: flex;
-      flex-direction: column;
-      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 15px;
     }
 
-    .highlight, .highlight-m {
+    #typewriter {
       color: var(--saffron);
       font-weight: bold;
       font-size: 18px;
-      text-transform: uppercase;
+      /* text-transform: uppercase; */
+      white-space: nowrap;
     }
 
-    .highlight-m {
-      display: none;
-    }
-
+    /* ✅ Scroll Button */
     .login-scroll-btn {
       display: none;
-      margin-top: 50px;
-      padding: 20px;
+      margin-top: 30px;
+      padding: 14px;
       background-color: var(--emerald);
       color: var(--charcoal);
       font-weight: bold;
@@ -96,13 +103,20 @@
       border-radius: 8px;
       font-size: 16px;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
- 
+
+    .login-scroll-btn:hover {
+      transform: scale(1.01) translateY(-2px);
+    }
+
+    /* ✅ Right Section */
     .right-section {
       background-color: white;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
     }
 
     .form-container {
@@ -115,11 +129,23 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
-    .form-container h3 {
+    .form-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .form-logo img {
+      width: 60px;
+      height: auto;
+    }
+
+    .form-logo h3 {
       font-size: 24px;
       font-weight: 700;
-      text-align: center;
-      margin-bottom: 24px;
+      font-family: 'Montserrat', sans-serif;
     }
 
     label {
@@ -140,9 +166,7 @@
       color: var(--charcoal);
     }
 
-    input:focus {
-      outline: 2px solid var(--emerald);
-    }
+    input:focus { outline: 2px solid var(--emerald); }
 
     button[type="submit"] {
       width: 100%;
@@ -154,17 +178,11 @@
       border-radius: 8px;
       font-size: 16px;
       cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background 0.3s ease;
     }
 
-    .login-scroll-btn:hover {
-      transform: scale(1.01) translateY(-2px);
-      transition: transform 0.2s ease;
-    }
-
-    button[type="submit"]:active{
+    button[type="submit"]:active {
       transform: scale(0.98);
-      transition: transform 0.01s ease;
     }
 
     .error-text {
@@ -175,7 +193,24 @@
       text-align: center;
     }
 
-    @media (max-width: 768px) {
+    .security-note {
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--saffron);
+      text-align: center;
+    }
+
+    /* ✅ CTA under the form */
+    .cta-under-form {
+      /* margin-top: 20px; */
+      font-size: 15px;
+      color: var(--charcoal);
+      font-weight: 600;
+      text-align: center;
+      /* max-width: 380px; */
+    }
+
+    @media (max-width: 600px) {
       body {
         flex-direction: column;
         height: 200dvh;
@@ -184,121 +219,87 @@
       .left-section, .right-section {
         flex: none;
         width: 100%;
-        height: 50%;
+        height: 100dvh;
         padding: 30px 20px;
       }
 
-      .left-section h1 {
-        font-size: 26px;
-      }
+      
 
-      .highlight {
-        display: none;
-      }
+      .left-section h1 { font-size: 22px; }
 
-      .highlight-m {
-        font-size: 16px;
-        display: block;
-      }
+      .login-scroll-btn { display: inline-block; }
 
-      .login-scroll-btn {
-        display: inline-block;
-      }
+      .form-container { padding: 28px; }
 
-      .form-container {
-        padding: 28px;
+      .security-note{
+        font-size: 12px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Left Section -->
+  <!-- ✅ Left Section -->
   <div class="left-section">
-    <div id="top-left" style="margin-top: 50px;">
-      <img src="GLYPH(1).png" alt="Logo" />
-      <h2>Welcome to the</h2> 
-      <h1>.transitions co-Builders Hub</h1>
-    </div>
-    
-    <div id="bottom-left" style="margin-bottom: 50px">
-      <h2>Home of</h2>
-      <p class="highlight">Intelligence | Ingenuity | Excellence | Happiness</p>
-      <p class="highlight-m">Intelligence | Ingenuity <br> Excellence | Happiness</p>
-      
-      <!-- Scroll Button -->
-      <button class="login-scroll-btn" onclick="document.getElementById('loginForm').scrollIntoView({ behavior: 'smooth' })">
-        Login ↓
-      </button>
+    <img src="GLYPH(1).png" alt="Logo" />
+    <h2>Welcome to the</h2> 
+    <h1>.transitions co-Builders Hub</h1>
+    <p class="tagline">“An African-led social enterprise transforming the continent’s employability and entrepreneurship landscape”</p>
 
-      <!-- <p>Join us in building a brighter future for Africa.</p> -->
+    <div id="typewriter-container">
+      <p id="typewriter"></p>
     </div>
+
+    <button class="login-scroll-btn" onclick="document.getElementById('loginForm').scrollIntoView({ behavior: 'smooth' })">
+      Login ↓
+    </button>
   </div>
 
-  <!-- Right Section -->
+  <!-- ✅ Right Section -->
   <div class="right-section">
     <div class="form-container">
-      <div id="login-form-header" style="display: flex; gap: 20px; justify-content: center; align-items: top; margin-bottom: 50px">
-  <img src="GLYPH(1).png" alt="Logo" style="width: 50px; height: 50px;"/>
-  <h3 style="font-family: 'Montserrat', sans-serif; font-weight: bold; font-size: 24px; color: var(--lightgray); margin-top: 10px;">Sign In</h3>
-</div>
-
-
-      
-      
+      <div class="form-logo">
+        <img src="GLYPH(1).png" alt="Logo" />
+        <h3>Sign In</h3>
+      </div>
       <form id="loginForm">
-        <div>
-          <label for="email">Email</label>
-          <input type="email" id="email" required />
-        </div>
-        <div>
-          <label for="password">Password</label>
-          <input type="password" id="password" required />
-        </div>
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
         <button type="submit">Login</button>
         <p id="errorText" class="error-text">Incorrect email or password.</p>
+        <p class="security-note">🔒 Your credentials are secure and encrypted.</p>
       </form>
     </div>
+    <p class="cta-under-form">co-Build to co-Own what you help to co-Create</p>
   </div>
 
-  <!-- Firebase Auth Script -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  <script>
+    const words = ["Collaborative Leadership", "Distributed Ownership", "Ecosystem-level Accountability"];
+    const speed = 100; 
+    const delay = 1500;
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyBBK4ccMH83_Xlba1oZVO3b4AANPdS78Do",
-      authDomain: "tayari-transitions-auth.firebaseapp.com",
-      projectId: "tayari-transitions-auth",
-      storageBucket: "tayari-transitions-auth.appspot.com",
-      messagingSenderId: "356422305168",
-      appId: "1:356422305168:web:de6c9cc923133e31bd1f15"
-    };
+    const el = document.getElementById("typewriter");
+    let wordIndex = 0;
+    let charIndex = 0;
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+    function typeWord() {
+      const currentWord = words[wordIndex];
 
-    const loginForm = document.getElementById("loginForm");
-    const errorText = document.getElementById("errorText");
-    const loginButton = loginForm.querySelector("button");
+      if (charIndex <= currentWord.length) {
+        el.textContent = currentWord.substring(0, charIndex);
+        charIndex++;
+        setTimeout(typeWord, speed);
+      } else {
+        setTimeout(() => {
+          charIndex = 0;
+          wordIndex = (wordIndex + 1) % words.length;
+          typeWord();
+        }, delay);
+      }
+    }
 
-    loginForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value;
-
-      loginButton.disabled = true;
-      loginButton.textContent = "Logging in...";
-
-      signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
-          window.location.href = "landing.html";
-        })
-        .catch(() => {
-          errorText.style.display = "block";
-          loginButton.disabled = false;
-          loginButton.textContent = "Login";
-        });
-    });
+    typeWord();
   </script>
 </body>
 </html>
