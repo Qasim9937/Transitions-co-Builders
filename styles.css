@@ -118,9 +118,9 @@
 
     .nav-wrapper{
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
-      font-size: 16px;
+      font-size: 14px;
       padding: 10px 20px;
       position: absolute;
       width: 100%;
@@ -138,8 +138,9 @@
 
     .navbar {
       display: flex;
-      gap: 20px;
+      gap: 15px;
       align-items: center;
+      justify-content: space-between;
     }
     .navbar a{
       text-decoration: none;
@@ -302,9 +303,6 @@
       display: flex;
     }
 
-
-    
-
     /* SECTION 2 */
     #sect2-wrapper {
       display: flex;
@@ -433,7 +431,7 @@
       animation: slide-out 3s linear forwards;
     }
 
-    .sect2-text2 {
+    #sect2-text2 {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -443,13 +441,13 @@
             background-color: var(--lightgray);
         }
 
-        .div1-sect2-text2{
+        #div1-sect2-text2{
           display: flex;
           flex-direction: column;
           gap: 20px;
         }
 
-        .div1-sect2-text2 .section-text{
+        #div1-sect2-text2 #mission-text{
             font-size: 75px;
             width: 100%;
             color: var(--prussian);
@@ -458,14 +456,14 @@
 
         
 
-        .sect2-text2 div {
+        #sect2-text2 div {
             width: 50%;
             display: flex;
             justify-content: flex-end;
             color: var(--prussian);
         }
 
-        .sect2-text2 div p {
+        #sect2-text2 div p {
             font-size: 18px;
             width: 80%;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -1378,7 +1376,7 @@
         padding: 0 20px;
     }
 
-    #div1-sect2-text2 .section-text{
+    #div1-sect2-text2 #mission-text{
         font-size: 40px; /* Reduced size for better fit */
         width: 100%;
         line-height: 45px;
