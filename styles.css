@@ -1466,14 +1466,13 @@
       
 
       #title-text-sect5 {
-        /* font-size: 2.5rem; */
+        font-size: 2.5rem;
         margin-top: 50px;
-
       }
 
       #div2-sect5 > p {
-        font-size: 18px;
-        width: 90%;
+        font-size: 18px; 
+        width: 100%;
         line-height: 30px;
       }
 
@@ -1493,7 +1492,7 @@
       #div1-sect6, #div2-sect6 {
         width: 100%;
         padding: 15px;
-        gap: 20px;
+        gap: 150px;
       }
 
       #title-text-sect6 {
