@@ -287,14 +287,14 @@
 
     .mobile-menu .dropdown{
       position: unset;
-      left: unset;
+      left: 200px;
       top: unset;
       border: 2px solid red;
     }
 
     .mobile-menu.show , #mobile-menu2.show{
       display: flex;
-      /* opacity: 1; */
+      opacity: .9;
       /* transform: translateY(0); */
     }
 
@@ -307,11 +307,11 @@
       border-bottom: 1px solid var(--prussian);
     }
 
-    .mobile-menu #summits{
+    /* .mobile-menu #summits{
       display: none;
       margin-left: 20px;
       flex-direction: column;
-    }
+    } */
 
     .show-hide{
       display: flex;
@@ -611,7 +611,7 @@
         /* Grid for sect4 */
         #sect4-grid {
             display: grid;
-            grid-template-columns: repeat(4, minmax(320px, 1fr));
+            grid-template-columns: repeat(3, minmax(320px, 1fr));
             padding: 100px 0 0;
             gap: 15px;
         }
