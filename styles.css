@@ -1326,6 +1326,8 @@
         width: 100%;
         padding: 30px;
         gap: 20px;
+        display: flex;
+        flex-direction: column;
       }
 
       #div1-inner-wrapper {
