@@ -686,18 +686,15 @@
     }
 
     /* Div1 and Div2 styles */
-    #div1-sect, #div2-sect5 {
+    #div1-sect5, #div2-sect5 {
       padding: 10px 0 10px 50px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-    }
-
-    #div2-sect5 {
       width: 50%;
-      overflow-x: hidden;
       gap: 50px;
+      overflow-x: hidden;
     }
 
     /* Paragraph animation */
@@ -710,7 +707,7 @@
     }
 
     /* Animated link */
-    #div2-sect5 > a {
+    #div2-sect5  a, #div1-sect5 a{
       opacity: 0;
       animation: slideUp 0.8s ease forwards;
       animation-delay: 1.4s;
@@ -721,7 +718,7 @@
       font-size: 20px;
       margin-bottom: 150px;
       text-decoration: none;
-      color: black;
+      color: var(--crimson);
     }
 
     #div2-sect5 > a:hover {
