@@ -1,13 +1,3 @@
-// const summits = document.getElementById('summits')
-// const summitDiv = document.getElementById('summit')
-
-
-// summitDiv.addEventListener('click', () => {
-//   summits.classList.toggle('show-hide')
-// })
-
-// console.log(window.scrollY)
-
 const navbar = document.getElementById('nav-wrapper2')
 const menu2 = document.getElementById('mobile-menu2');
 
@@ -22,10 +12,12 @@ window.addEventListener('scroll', () => {
 
     currentpos > prevScrollPos ? navbar.style.display = 'none' : 
     navbar.style.display = 'flex'
+    
 
   }
   else{
-    navbar.style.display = 'none'
+    navbar.style.display = 'none';
+    
   }
 
   prevScrollPos = currentpos
@@ -153,5 +145,3 @@ function toggleMobileMenu2() {
     })
 
     })
-  
-      
