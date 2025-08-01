@@ -1,15 +1,15 @@
-const summits = document.getElementById('summits')
-const summitDiv = document.getElementById('summit')
-const navbar = document.getElementById('nav-wrapper2')
-const menu2 = document.getElementById('mobile-menu2');
+// const summits = document.getElementById('summits')
+// const summitDiv = document.getElementById('summit')
 
-summitDiv.addEventListener('click', () => {
-  summits.classList.toggle('show-hide')
-})
+
+// summitDiv.addEventListener('click', () => {
+//   summits.classList.toggle('show-hide')
+// })
 
 // console.log(window.scrollY)
 
-
+const navbar = document.getElementById('nav-wrapper2')
+const menu2 = document.getElementById('mobile-menu2');
 
 let prevScrollPos = window.scrollY
 
