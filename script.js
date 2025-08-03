@@ -1,5 +1,6 @@
-const navbar = document.getElementById('nav-wrapper2')
+const menu1 = document.getElementById('mobile-menu1');
 const menu2 = document.getElementById('mobile-menu2');
+const navbar2 = document.getElementById('nav-wrapper2');
 
 let prevScrollPos = window.scrollY;
 
@@ -7,23 +8,28 @@ window.addEventListener('scroll', () => {
   let currentpos = window.scrollY;
 
   if (currentpos >= 100) {
-    currentpos > prevScrollPos ? navbar.style.display = 'none' : 
-    navbar.style.display = 'flex';
+    if (currentpos > prevScrollPos) {
+      navbar2.classList.remove('visible');
+      menu2.classList.remove('show');
+      menu1.classList.remove('show');
+    } else {
+      navbar2.classList.add('visible');
+    }
   } else {
-    navbar.style.display = 'none';
+    navbar2.classList.remove('visible');
   }
 
   prevScrollPos = currentpos;
 });
 
 function toggleMobileMenu() {
-  const menu1 = document.getElementById('mobile-menu1');
   menu1.classList.toggle('show');
 }
 
 function toggleMobileMenu2() {
   menu2.classList.toggle('show');
 }
+
 
 /* === Slideshow === */
 let slideIndex = 0;
@@ -160,3 +166,29 @@ function scrollSlider(direction) {
   const scrollAmount = 250;
   slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
 }
+
+
+
+function setupMobileAccordion() {
+  const mobileDropdowns = document.querySelectorAll('.mobile-has-dropdown');
+
+  mobileDropdowns.forEach(parent => {
+    const link = parent.querySelector('a');
+
+    link.addEventListener('click', (e) => {
+      const isOpen = parent.classList.contains('open');
+
+      // Close all other dropdowns
+      document.querySelectorAll('.mobile-has-dropdown').forEach(p => p.classList.remove('open'));
+
+      // Toggle current one
+      if (!isOpen) parent.classList.add('open');
+
+      e.preventDefault(); // Prevent default link behavior
+    });
+  });
+}
+
+setupMobileAccordion();
+
+
