@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resource Gallery</title>
+
+  <style>
+    :root {
+      --prussian: #003049;
+      --saffron: #f4a300;
+      --lightgray: #f2f2f2;
+      --bg-white: #ffffff;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-white);
+      color: black;
+    }
+
+    section#resource-gallery {
+      padding: 60px 30px;
+      max-width: 1200px;
+      margin: 50px auto;
+      text-align: center;
+
+    }
+
+    #resource-gallery-header{
+        margin: 50px auto 100px;
+    }
+
+    #resource-gallery-header h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    #resource-gallery-header h2 .highlight {
+      color: crimson;
+    }
+
+    #resource-gallery-header p {
+      color: black;
+      font-size: 1rem;
+      margin-bottom: 40px;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .resource-card {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      transition: all 0.3s ease;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .resource-icon {
+      font-weight: bold;
+      font-size: 1.8rem;
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      flex-shrink: 0;
+    }
+
+    .word-icon {
+      background-color: var(--prussian);
+    }
+
+    .ppt-icon {
+      background-color: var(--saffron);
+    }
+
+    .resource-content h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .resource-content p {
+      margin: 5px 0 0 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="resource-gallery">
+    <div id="resource-gallery-header">
+      <h2>RESOURCE <span class="highlight">GALLERY</span></h2>
+      <p>All key documents in one place. Access decks, tools & more.</p>
+    </div>
+
+    <div class="resource-grid">
+      <!-- Word Documents -->
+      <a href="https://drive.google.com/open?id=1jSfEqEQ_CLeuf2u6MN3spYHTPrc6r-6P" class="resource-card" target="_blank">
+        <div class="resource-icon word-icon">W</div>
+        <div class="resource-content">
+          <h3>Operational Model</h3>
+          <p>Roles, coordination and execution guidelines</p>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/open?id=1UTpEjzjSLrh75Z9CwG45iaakfIR1uC5N" class="resource-card" target="_blank">
+        <div class="resource-icon word-icon">W</div>
+        <div class="resource-content">
+          <h3>Co-Builders Fellowship Brief</h3>
+          <p>Overview of the program and participant expectations</p>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/open?id=1qyVUDko4qqdmtqhw8oM0Mxb6uTF5q6eb" class="resource-card" target="_blank">
+        <div class="resource-icon word-icon">W</div>
+        <div class="resource-content">
+          <h3>Co-Builder Onboarding Template</h3>
+          <p>Useful starter kit for new ecosystem contributors</p>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/open?id=1Vn7lX0E_BK4IhVGCyvqoe5qJirVfEOfi" class="resource-card" target="_blank">
+        <div class="resource-icon word-icon">W</div>
+        <div class="resource-content">
+          <h3>Secretariat Roles</h3>
+          <p>Responsibilities and support infrastructure</p>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/open?id=1HgpyM0qaTqT8wkRo0pNQRhuVnbr4Q0cW" class="resource-card" target="_blank">
+        <div class="resource-icon word-icon">W</div>
+        <div class="resource-content">
+          <h3>Program Design Reference</h3>
+          <p>Detailed design references for transitions programs</p>
+        </div>
+      </a>
+
+      <!-- PowerPoint Documents -->
+      <a href="https://drive.google.com/open?id=1APr3ONHnrRIAfQxk7iQVyWGyWlJLVcNp" class="resource-card" target="_blank">
+        <div class="resource-icon ppt-icon">P</div>
+        <div class="resource-content">
+          <h3>Angels Capital Deck</h3>
+          <p>Overview of catalytic capital structure and flows</p>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/open?id=1p9VYHtbEdjeTMaTIOmWEQYEm-Mq-RmiV" class="resource-card" target="_blank">
+        <div class="resource-icon ppt-icon">P</div>
+        <div class="resource-content">
+          <h3>Talent Incubator Deck</h3>
+          <p>Vision and approach for employability accelerator</p>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/open?id=1SP-_kSa8oP823IkKY4s8HbikP0Mil4pO" class="resource-card" target="_blank">
+        <div class="resource-icon ppt-icon">P</div>
+        <div class="resource-content">
+          <h3>Impact Framework</h3>
+          <p>Outcomes and evaluation indicators</p>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/open?id=1lut-86HBoMqPJUsOySP_HfUtHSzVDhob" class="resource-card" target="_blank">
+        <div class="resource-icon ppt-icon">P</div>
+        <div class="resource-content">
+          <h3>Vision & Context Deck</h3>
+          <p>Problem framing and long-term objectives</p>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/open?id=14MxzvY9_6C0QmHfwlc7kD4va-EvwtVgM" class="resource-card" target="_blank">
+        <div class="resource-icon ppt-icon">P</div>
+        <div class="resource-content">
+          <h3>Charter & Principles</h3>
+          <p>Governance values & co-ownership philosophy</p>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/open?id=1lXAoOE-xD4z6EEfjn7Ungw5GxN-XXJqs" class="resource-card" target="_blank">
+        <div class="resource-icon ppt-icon">P</div>
+        <div class="resource-content">
+          <h3>Co-Builder Model</h3>
+          <p>Shared responsibility framework</p>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/open?id=1ZS5Ne_gwii-UoscaTd-SCbv69TniNgQQ" class="resource-card" target="_blank">
+        <div class="resource-icon ppt-icon">P</div>
+        <div class="resource-content">
+          <h3>Mission Summary</h3>
+          <p>Systemic goals of the Fellowship initiative</p>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/open?id=14qwSwi809XDJ83rfy2HGVh5MaDO5IFdN" class="resource-card" target="_blank">
+        <div class="resource-icon ppt-icon">P</div>
+        <div class="resource-content">
+          <h3>Venture Studio Deck</h3>
+          <p>From concept to scale: incubation strategy</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>
