@@ -578,7 +578,10 @@
         }
 
         .wh-bg-readmore{
-          color: var(--crimson);
+          background: var(--crimson);
+          color: white !important;
+          padding: 10px 20px;
+          border-radius: 50px;
         }
 
         .prussian-bg-readmore{
@@ -727,8 +730,8 @@
         /* Grid for sect4 */
         #sect4-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(320px, 1fr));
-            /* padding: 100px 0 0; */
+            grid-template-columns: repeat(4, minmax(280px, 1fr));
+            margin: 80px auto;
             gap: 15px;
         }
 
@@ -1516,6 +1519,65 @@
 }
 
 
+
+
+
+/* Generic section layout */
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 100px 50px;
+  gap: 40px;
+  background: white;
+}
+
+.section-left,
+.section-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.section-left {
+  width: 40%;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 700;
+  color: var(--prussian);
+  line-height: 1.2;
+}
+
+.section-right {
+  width: 55%;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--charcoal);
+}
+
+.section-right p {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+  color: var(--charcoal);
+}
+
+.section-right a {
+  font-size: 1rem;
+  color: var(--crimson);
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 20px;
+  align-self: flex-start;
+}
+
+.section-right a:hover {
+  color: var(--saffron);
+}
+
+
+
     /* FAQ Styles */
 
     #faq-section {
@@ -1868,6 +1930,33 @@
     
       }
 
+
+  .content-section {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .section-left,
+  .section-right {
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    text-align: left;
+  }
+
+  .section-right p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .section-right a {
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+
     
   #sect6-wrapper {
     padding: 40px 20px;
@@ -1930,12 +2019,12 @@
 
 
 
-        #pillars{
-          flex-direction: column;
-          gap: 10px;
-          justify-content: center;
-          align-items: center;
-        }
+    #pillars{
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
 
       .pillar {
     flex-direction: column;
