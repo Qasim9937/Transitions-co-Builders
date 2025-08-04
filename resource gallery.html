@@ -7,10 +7,14 @@
 
   <style>
     :root {
-      --prussian: #003049;
-      --saffron: #f4a300;
-      --lightgray: #f2f2f2;
-      --bg-white: #ffffff;
+      --bg-white: white;
+      --text-white: white;
+      --saffron: #f1cd30;
+      --crimson: #d21b1b;
+      --emerald: #50c878;
+      --prussian: #0a2e51;
+      --charcoal: #333333;
+      --lightgray: #f1f1f1;
     }
 
     body {
@@ -18,19 +22,29 @@
       margin: 0;
       padding: 0;
       background-color: var(--bg-white);
-      color: black;
+      color: var(--charcoal);
     }
 
-    section#resource-gallery {
-      padding: 60px 30px;
-      max-width: 1200px;
-      margin: 50px auto;
+    /* Navbar */
+    #nav-wrapper {
+      background-color: var(--prussian);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    #nav-wrapper a {
+      color: var(--text-white);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    #resource-gallery-header {
+      margin: 50px auto 100px;
       text-align: center;
-
-    }
-
-    #resource-gallery-header{
-        margin: 20px auto 100px;
     }
 
     #resource-gallery-header h2 {
@@ -39,28 +53,36 @@
     }
 
     #resource-gallery-header h2 .highlight {
-      color: crimson;
+      color: var(--crimson);
     }
 
     #resource-gallery-header p {
-      color: black;
+      color: var(--charcoal);
       font-size: 1rem;
       margin-bottom: 40px;
+    }
+
+    section#resource-gallery {
+      padding: 0 30px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .resource-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
+      width: 90%;
+      margin: auto;
     }
 
     .resource-card {
-      background-color: #f9f9f9;
+      background-color: var(--lightgray);
       border-radius: 10px;
       padding: 20px;
       text-decoration: none;
       color: inherit;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       display: flex;
       gap: 15px;
       align-items: flex-start;
@@ -69,7 +91,8 @@
 
     .resource-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0, 48, 73, 0.2); /* subtle prussian shadow */
+      border-left: 4px solid var(--saffron);
     }
 
     .resource-icon {
@@ -92,6 +115,7 @@
 
     .ppt-icon {
       background-color: var(--saffron);
+      color: var(--charcoal);
     }
 
     .resource-content h3 {
@@ -103,12 +127,47 @@
     .resource-content p {
       margin: 5px 0 0 0;
       font-size: 0.9rem;
-      color: #666;
+      color: #444;
+    }
+
+    @media (max-width: 600px) {
+      #nav-wrapper {
+        padding: 10px 20px;
+      }
+
+      #nav-wrapper a {
+        font-size: 1rem;
+      }
+
+      #resource-gallery-header h2 {
+        font-size: 2rem;
+      }
+
+      .resource-icon {
+        font-size: 1.4rem;
+        padding: 8px 12px;
+        width: 38px;
+        height: 38px;
+      }
+
+      .resource-content h3 {
+        font-size: 1rem;
+      }
+
+      .resource-content p {
+        font-size: 0.85rem;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- NAVBAR -->
+  <div id="nav-wrapper">
+    <a href="landing.html">&larr; Back to Home</a>
+  </div>
+
+  <!-- RESOURCE GALLERY SECTION -->
   <section id="resource-gallery">
     <div id="resource-gallery-header">
       <h2>RESOURCE <span class="highlight">GALLERY</span></h2>
@@ -226,4 +285,3 @@
 
 </body>
 </html>
-
