@@ -1,7 +1,6 @@
 :root{
   --bg-white: white;
   --text-white: white;
-
   --saffron: #f1cd30;
   --crimson: #d21b1b;
   --emerald: #50c878;
@@ -818,7 +817,6 @@
       flex-direction: column;
       gap: 30px;
       width: 50%;
-      overflow-x: hidden;
       justify-content: center;
       align-items: flex-start;
     }
@@ -1919,7 +1917,7 @@
       #div1-sect5, #div2-sect5 {
         width: 100%;
         gap: 30px;
-        font-size: 1.2rem;
+        font-size: 2rem;
       }
 
       #title-text-sect5 {
