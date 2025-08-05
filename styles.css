@@ -456,7 +456,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-      gap: 50px;
+      gap: 20px;
     }
 
     #div1 {
@@ -499,20 +499,6 @@
     #div2 > p:nth-of-type(2) { animation-delay: 0.6s; }
     #div2 > p:nth-of-type(3) { animation-delay: 1s; }
 
-    /* #div2 > a {
-      opacity: 0;
-      animation: slideUp 0.8s ease forwards;
-      animation-delay: 1.4s;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: center;
-      font-size: 20px;
-      margin-top: 50px;
-      margin-bottom: 150px;
-      text-decoration: none;
-      color: black;
-    } */
 
     #title-text {
       font-size: 4.5rem;
@@ -526,8 +512,6 @@
     }
 
     .intro-text {
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       font-size: 20px;
       width: 80%;
       line-height: 30px;
@@ -535,47 +519,28 @@
     }
 
     .highlight-text {
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-        'Lucida Sans', Arial, sans-serif;
       font-size: 25px;
       width: 100%;
       margin-top: 50px;
-      line-height: 45px;
+      /* line-height: 45px; */
       text-align: left;
     }
 
+    .highlight-text > ul > li{
+      list-style: dash;
+    }
+
+    #highlight-title{
+      font-size: 4rem;
+    }
+
     #detail-text {
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       font-size: 20px;
       width: 90%;
       line-height: 30px;
       text-align: left;
     }
 
-
-    #sect2-text2 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 20px 30px;
-            padding: 50px 50px 100px;
-            background-color: var(--lightgray);
-        }
-
-        #div1-sect2-text2{
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-        }
-
-        #div1-sect2-text2 #mission-text{
-            font-size: 75px;
-            width: 100%;
-            color: var(--prussian);
-            
-        }
 
         .readmore{
           font-size: 20px;
@@ -592,22 +557,6 @@
 
         .prussian-bg-readmore{
           color: var(--saffron);
-        }
-
-        
-
-        #sect2-text2 div {
-            width: 50%;
-            display: flex;
-            justify-content: flex-end;
-            color: var(--prussian);
-        }
-
-        #sect2-text2 div p {
-            font-size: 18px;
-            width: 80%;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
         }
 
       
@@ -627,9 +576,9 @@
         flex-direction: column;
         gap: 30px;
         width: 50%;
-        padding: 0 50px;
+        /* padding: 0 50px; */
         font-size: 1rem;
-        line-height: 1.6;
+        line-height: 1.5;
       }
 
       
@@ -1601,13 +1550,13 @@
 
       #sect2-wrapper {
         flex-direction: column;
-        padding: 20px;
-        gap: 30px;
+        padding: 10px;
+        padding: 30px 10px;
       }
 
       #div1, #div2 {
         width: 100%;
-        padding: 50px 5px;
+        padding: 30px 5px;
         gap: 20px;
         word-wrap: break-word;
       }
@@ -1617,13 +1566,14 @@
       }
 
       #title-text {
-        font-size: 2rem;
+        font-size: 3.5rem;
       }
 
       .intro-text {
-        font-size: 0.95rem;
+        font-size: 1rem;
         width: 100%;
-        line-height: 1.5;
+        line-height: 2;
+        
       }
 
       #div2 img {
@@ -1631,19 +1581,26 @@
         border-radius: 8px;
       }
 
+      #highlight-title{
+        font-size: 2.5rem;
+      }
+
       .highlight-text {
-        font-size: 0.95rem;
+        font-size: 1rem;
         width: 100%;
         line-height: 1.5;
         margin-top: 20px;
       }
+
+      
 
 
 
       #under-sect2 {
         margin-top: -20px;
         flex-direction: column;
-        padding: 30px 20px;
+        padding: 30px 10px;
+        font-size: 1rem;
       }
 
       #under-sect2-div {
@@ -1659,31 +1616,6 @@
         text-align: left;
       }
 
-      #sect2-text2 {
-        flex-direction: column;
-        align-items: flex-start; 
-        gap: 30px;
-        padding: 50px 20px;
-    }
-
-    #div1-sect2-text2 #mission-text{
-        font-size: 40px; /* Reduced size for better fit */
-        width: 100%;
-        line-height: 45px;
-        word-break: break-word;
-        overflow-wrap: break-word;
-    }
-
-    #sect2-text2 div {
-        width: 100%;
-        justify-content: flex-start;
-    }
-
-    #sect2-text2 div p {
-        width: 90%;
-        font-size: 16px;
-        line-height: 25px;
-    }
 
   #sect4-grid {
         /* grid-template-columns: auto; */
@@ -1709,6 +1641,8 @@
         font-size: 20px;
     }
 
+
+
   #sect5-wrapper {
     flex-direction: column;
     padding: 40px 20px;
@@ -1732,7 +1666,7 @@
     overflow: visible;
   }
 
-  #div2-sect5 p {
+  #div2-sect5 p, #div1-sect5 p:nth-of-type(2) {
     font-size: 0.95rem;
     line-height: 1.5;
   }
