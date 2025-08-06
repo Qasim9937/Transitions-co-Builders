@@ -1779,7 +1779,8 @@
   }
 
   .section-title{
-    font-size: 1rem !important;
+    font-size: 1.8rem;
+    justify-self: center;
   }
 
   .pillar-content {
@@ -1815,4 +1816,3 @@
 
 
   
-
