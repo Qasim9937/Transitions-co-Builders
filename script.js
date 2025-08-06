@@ -92,7 +92,7 @@ allPeople.forEach(person => {
     </div>
     <div class="person-info">
       <p>${person.pName}</p>
-      <div id='line' style="background-color: orange; width: 100px; height: 2px"></div>
+      <div id='line' style="background-color: var(--emerald); width: 100px; height: 2px"></div>
       <p>${person.position}</p>
     </div>
     <button class="see-more-btn">See More</button> 
