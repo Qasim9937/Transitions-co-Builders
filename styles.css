@@ -386,6 +386,7 @@
   background: var(--prussian);
   color: var(--lightgray);
   transition: all 0.3s ease;
+  border: 2px solid red;
 }
 
 .mobile-menu.show {
@@ -1817,4 +1818,5 @@
 
 
   
+
 
