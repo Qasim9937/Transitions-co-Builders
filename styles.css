@@ -96,7 +96,7 @@
    #nav-wrapper2 {
   background-color: var(--prussian);
   position: fixed;
-  top: -25px; /* hide offscreen initially */
+/*   top: -25px; /* hide offscreen initially */ */
   left: 0;
   width: 100%;
   z-index: 1200;
@@ -1817,6 +1817,7 @@
 
 
   
+
 
 
 
