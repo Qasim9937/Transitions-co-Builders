@@ -223,7 +223,7 @@
     }
 
     .hamburger span {
-      width: 35px;
+      width: 25px;
       height: 5px;
       background-color: var(--emerald);
     }
@@ -1779,7 +1779,8 @@
   }
 
   .section-title{
-    font-size: 1.6rem !important;
+    font-size: 1.8rem !important;
+    justify-self: center;
     text-align: center;
   }
 
@@ -1816,4 +1817,3 @@
 
 
   
-
