@@ -769,50 +769,54 @@
   align-items: flex-start;
   padding: 100px 50px;
   gap: 40px;
-  background-color: white; 
+  background-color: white;
   color: var(--prussian);
+  font-family: 'Roboto', sans-serif; /* Apply body font globally to section */
 }
 
 #div1-sect5, #div2-sect5 {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  font-size: 1.5rem;
 }
 
-#div1-sect5{
+#div1-sect5 {
   width: 40%;
   margin: auto;
-  display: flex;
   justify-content: center;
   align-items: center;
+  text-align: left;
 }
 
 #title-text-sect5 {
-  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  color: var(--prussian);
+  font-size: clamp(2.25rem, 5vw, 3rem); /* ~36px–48px */
   line-height: 1.2;
+  text-transform: none; /* Use title case */
+  color: var(--prussian);
 }
 
 #div2-sect5 {
   width: 55%;
-  /* font-size: 1.5rem; */
-  /* line-height: 1.6; */
+  font-size: clamp(0.9rem, 1.2vw, 1rem); /* ~14px–16px */
+  line-height: 1.75;
   color: var(--prussian);
 }
 
 #div2-sect5 p {
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  line-height: 1.6;
   margin: 0;
 }
 
 #div2-sect5 a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Call to action – bold emphasis */
   font-size: 1rem;
   margin-top: 10px;
   align-self: flex-start;
+  text-decoration: none;
 }
+
 
 
     
@@ -1643,6 +1647,7 @@
     flex-direction: column;
     padding: 40px 20px;
     gap: 30px;
+    font-family: 'Roboto', sans-serif;
   }
 
   #div1-sect5,
@@ -1651,22 +1656,33 @@
     padding: 0;
   }
 
-
   #title-text-sect5 {
-    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.8rem, 6vw, 2.2rem); /* ~32px–36px for headline */
+    font-weight: 700;
+    line-height: 1.2;
     text-align: left;
+    margin-bottom: 10px;
   }
 
   #div2-sect5 {
-    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.95rem, 1.5vw, 1rem); /* ~15px–16px for body */
+    line-height: 1.6;
     gap: 20px;
-    /* overflow: visible; */
   }
 
-  #div2-sect5 p{
-    font-size: 1rem;
+  #div2-sect5 p {
     margin-bottom: 20px;
-    line-height: 1.5;
+  }
+
+  #div2-sect5 a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
   }
 
 
