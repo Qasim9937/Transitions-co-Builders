@@ -21,12 +21,15 @@
     }
 
     body {
-      max-width: 100vw;
-      background-color: var(--lightgray);
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-      font-family: 'Montserrat', sans-serif;;
-    }
+  max-width: 100vw;
+  background-color: var(--lightgray);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--prussian);
+}
 
     @keyframes fadeInUp {
       to {
@@ -136,81 +139,6 @@
       transform: scaleX(0);
       transform-origin: right;
     }
-
-    /* .nav-invite {
-      color: var(--text-white);
-      font-weight: bold;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }
-    .nav-invite-slider {
-      background-color: var(--emerald); 
-      height: 1.5px;
-      width: 100%;
-      margin-top: 2px;
-    }
-    
-    .nav-invite:hover .nav-invite-slider {
-      animation: slide-out 1.5s ease-in-out forwards;
-    } */
-
-    /* Dropdown container */
-/* .has-dropdown {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-} */
-
-/* Show dropdown on hover */
-/* .has-dropdown:hover .dropdown {
-  display: flex;
-} */
-
-/* Dropdown menu styles */
-/* .dropdown {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: none;
-  flex-direction: column;
-  background: transparent;
-  width: 250px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  z-index: 100;
-  padding: 10px 0;
-} */
-
-/* Each link in dropdown */
-/* .dropdown a {
-  text-decoration: none;
-  padding: 12px 20px;
-  display: block;
-  background-color: var(--prussian);
-} */
-
-/* Hover effect */
-/* .dropdown a:hover {
-  background-color: var(--lightgray);
-  color: var(--crimson)
-} */
-
-/* Title text */
-/* .dropdown a div p:first-child {
-  font-weight: bold;
-  font-size: 16px;
-  margin: 0;
-} */
-
-/* Subtitle text */
-/* .dropdown a div p.nav-grey-text {
-  color: #666;
-  font-size: 13px;
-  margin: 3px 0 0 0;
-} */
 
 
     
@@ -549,23 +477,38 @@
     }
 
 
-        .readmore{
-          font-size: 20px;
-          text-decoration: none !important;
-          padding: 15px 20px;
-          border-radius: 50px;
-          width: fit-content;
-        }
+       .readmore {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Bold for emphasis */
+  font-size: 1rem;  /* 16px — within digital CTA range */
+  text-decoration: none !important;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 15px 20px;
+  border-radius: 50px;
+  width: fit-content;
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.2;
+}
 
-        .wh-bg-readmore{
-          background: var(--crimson);
-          color: white !important;
-        }
 
-        .prussian-bg-readmore{
-          background: var(--saffron);
-          color: var(--prussian);
-        }
+.wh-bg-readmore {
+  background: var(--crimson);
+  color: white !important;
+}
+
+.prussian-bg-readmore {
+  background: var(--saffron);
+  color: var(--prussian);
+}
+
+.readmore:hover {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+}
+
+
 
       
         /* Div under sect2 */
