@@ -25,6 +25,7 @@
       background-color: var(--lightgray);
       overflow-x: hidden;
       scroll-behavior: smooth;
+      font-family: 'Montserrat', sans-serif;;
     }
 
     @keyframes fadeInUp {
@@ -781,6 +782,10 @@
 
 #div1-sect5{
   width: 40%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #title-text-sect5 {
@@ -1422,7 +1427,7 @@
           display: flex;
           flex-direction: column;
           gap: 50px;
-          color: var(--crimson);
+          color: var(--saffron);
         }
 
         .footer-div1-div{
@@ -1655,22 +1660,15 @@
   #div2-sect5 {
     font-size: 1rem;
     gap: 20px;
-    overflow: visible;
+    /* overflow: visible; */
   }
 
-  #div2-sect5 p, #div1-sect5 p:nth-of-type(2) {
+  #div2-sect5 p{
     font-size: 1rem;
     margin-bottom: 20px;
     line-height: 1.5;
   }
 
-  #div2-sect5 p:nth-of-type(1){
-    display: none;
-  }
-
-  /* #div2-sect5 a {
-    font-size: 1rem;
-  } */
 
 
 
