@@ -746,7 +746,7 @@
   background-color: white;
   color: var(--prussian);
   font-family: 'Roboto', sans-serif; /* Body font for the section */
-  height: 400px;
+  height: min(400px, fit-content);
 }
 
 #div1-sect5, #div2-sect5 {
