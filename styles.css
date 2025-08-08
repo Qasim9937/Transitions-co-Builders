@@ -747,6 +747,7 @@
   color: var(--prussian);
   font-family: 'Roboto', sans-serif; /* Body font for the section */
   height: min(400px, fit-content);
+  padding: 50px 20px;
 }
 
 #div1-sect5, #div2-sect5 {
