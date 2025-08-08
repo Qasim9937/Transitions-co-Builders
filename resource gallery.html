@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resource Gallery</title>
 
+  <!-- ✅ Font Imports -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+
+
   <style>
     :root {
       --bg-white: white;
@@ -18,11 +23,13 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
       background-color: var(--bg-white);
       color: var(--charcoal);
+      font-size: 15px;
+      line-height: 1.6;
     }
 
     /* Navbar */
@@ -40,6 +47,7 @@
       text-decoration: none;
       font-size: 1.1rem;
       font-weight: 500;
+      font-family: 'Montserrat', sans-serif;
     }
 
     #resource-gallery-header {
@@ -48,8 +56,12 @@
     }
 
     #resource-gallery-header h2 {
-      font-size: 2.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 42px;
+      text-transform: uppercase;
       margin-bottom: 10px;
+      color: var(--prussian)
     }
 
     #resource-gallery-header h2 .highlight {
@@ -57,7 +69,7 @@
     }
 
     #resource-gallery-header p {
-      color: var(--charcoal);
+      font-family: 'Roboto', sans-serif;
       font-size: 1rem;
       margin-bottom: 40px;
     }
@@ -91,8 +103,7 @@
 
     .resource-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 4px 15px rgba(0, 48, 73, 0.2); /* subtle prussian shadow */
-      border-left: 4px solid var(--saffron);
+      box-shadow: 0 4px 15px var(--prussian);
     }
 
     .resource-icon {
@@ -107,6 +118,7 @@
       width: 45px;
       height: 45px;
       flex-shrink: 0;
+      font-family: 'Montserrat', sans-serif;
     }
 
     .word-icon {
@@ -120,13 +132,15 @@
 
     .resource-content h3 {
       margin: 0;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
     }
 
     .resource-content p {
       margin: 5px 0 0 0;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      font-family: 'Roboto', sans-serif;
       color: #444;
     }
 
@@ -140,7 +154,7 @@
       }
 
       #resource-gallery-header h2 {
-        font-size: 2rem;
+        font-size: 32px;
       }
 
       .resource-icon {
@@ -160,6 +174,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- NAVBAR -->
