@@ -373,132 +373,157 @@
     }
 
     /* SECTION 2 */
-    #sect2-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
-      position: relative;
-      padding: 30px 0;
-      background: var(--prussian);
-      color: var(--lightgray);
-    }
+#sect2-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  padding: 30px 0;
+  background: var(--prussian);
+  color: var(--lightgray);
+}
 
+#div1, #div2 {
+  padding: 10px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
 
+#div1 {
+  width: 50%;
+}
 
-    #div1, #div2 {
-      padding: 10px 50px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      gap: 20px;
-    }
+#div1-inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 50px;
+  position: sticky;
+  top: 50px;
+  left: 20px;
+}
 
-    #div1 {
-      width: 50%;
-    }
+#div2 {
+  width: 50%;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
 
-    #div1-inner-wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      gap: 50px;
-      position: sticky;
-      top: 50px;
-      left: 20px;
-    }
+#div2 > img {
+  width: 100%;
+  margin-top: 150px;
+  opacity: 0;
+  animation: slideUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
 
-    #div2 {
-      width: 50%;
-      overflow-x: hidden;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
+#div2 > p, #div1 p {
+  opacity: 0;
+  animation: slideUp 0.8s ease forwards;
+}
 
-    #div2 > img {
-      width: 100%;
-      margin-top: 150px;
-      opacity: 0;
-      animation: slideUp 0.8s ease forwards;
-      animation-delay: 0.2s;
-    }
+#div1-inner-wrapper > p:nth-of-type(1) { animation-delay: 0.2s; }
+#div1-inner-wrapper > p:nth-of-type(2) { animation-delay: 0.6s; }
+#div2 > p:nth-of-type(2) { animation-delay: 0.6s; }
+#div2 > p:nth-of-type(3) { animation-delay: 1s; }
 
-    #div2 > p, #div1 p {
-      opacity: 0;
-      animation: slideUp 0.8s ease forwards;
-    }
-
-    #div1-inner-wrapper > p:nth-of-type(1) { animation-delay: 0.2s; }
-    #div1-inner-wrapper > p:nth-of-type(2) { animation-delay: 0.6s; }
-    #div2 > p:nth-of-type(2) { animation-delay: 0.6s; }
-    #div2 > p:nth-of-type(3) { animation-delay: 1s; }
-
-
-    #title-text {
-      font-size: 4.5rem;
-      text-align: left;
-      margin-top: 50px;
-      margin-bottom: 30px;
-    }
-
-    #orange-text {
-      color: var(--lightgray);
-    }
-
-    .intro-text {
-      font-size: 20px;
-      width: 80%;
-      line-height: 30px;
-      text-align: left;
-    }
-
-    .highlight-text {
-      font-size: 25px;
-      width: 100%;
-      margin-top: 50px;
-      /* line-height: 45px; */
-      text-align: left;
-    }
-
-    .highlight-text > ul > li{
-      list-style: dash;
-    }
-
-    #highlight-title{
-      font-size: 4rem;
-    }
-
-    #detail-text {
-      font-size: 20px;
-      width: 90%;
-      line-height: 30px;
-      text-align: left;
-    }
-
-
-       .readmore {
+/* Headline — Montserrat Extra Bold, 36–48px digital */
+#title-text {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700; /* Bold for emphasis */
-  font-size: 1rem;  /* 16px — within digital CTA range */
-  text-decoration: none !important;
+  font-weight: 800;
+  font-size: clamp(2.25rem, 5vw, 3rem); /* 36px–48px */
+  line-height: 1.2;
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+}
+
+/* Intro paragraph — Roboto Normal, 16–18px digital */
+.intro-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 1.2vw, 1.125rem); /* 16px–18px */
+  width: 80%;
+  line-height: 1.8;
+  text-align: left;
+}
+
+/* Problems section title — Montserrat Semi-Bold, 24–32px */
+#highlight-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 2rem); /* 24px–32px */
+  line-height: 1.4;
+  text-transform: capitalize;
+}
+
+/* Problems list text — Roboto Normal, 16–18px */
+.highlight-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 1.1vw, 1.125rem); /* 16px–18px */
+  width: 100%;
+  margin-top: 50px;
+  line-height: 1.75;
+  text-align: left;
+}
+
+.highlight-text ul {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+/* Detailed description — Roboto Normal, 16px */
+#detail-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  width: 90%;
+  line-height: 1.75;
+  text-align: left;
+}
+
+/* CTA link — Montserrat Bold, all caps */
+.readmore {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;  /* 16px */
   text-transform: uppercase;
   letter-spacing: 0.03em;
   padding: 15px 20px;
   border-radius: 50px;
   width: fit-content;
   display: inline-block;
+  text-decoration: none !important;
   transition: background-color 0.3s ease, color 0.3s ease;
   line-height: 1.2;
 }
 
 
+
+/* CTA BUTTONS — Montserrat Bold, uppercase */
 .wh-bg-readmore {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Bold for CTA emphasis */
+  font-size: 1rem;  /* 16px digital per guideline */
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   background: var(--crimson);
   color: white !important;
 }
 
 .prussian-bg-readmore {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   background: var(--saffron);
   color: var(--prussian);
 }
@@ -508,29 +533,39 @@
   transform: translateY(-1px);
 }
 
-
-
-      
+   
         /* Div under sect2 */
 
       #under-sect2 {
-        display: flex;
-        flex-direction: row-reverse;
-        width: 100%;
-        background: var(--prussian);
-        color: var(--lightgray);
-        padding: 50px 0;
-      }
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  background: var(--prussian);
+  color: var(--lightgray);
+  padding: 50px 0;
+}
 
-      #under-sect2-div {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        width: 50%;
-        /* padding: 0 50px; */
-        font-size: 1rem;
-        line-height: 1.5;
-      }
+#under-sect2-div {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 50%;
+  /* padding: 0 50px; */
+  
+  /* Body text — Roboto Normal, 16px digital */
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  line-height: 1.75; /* Comfortable spacing for readability */
+}
+
+#under-sect2-div p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  line-height: 1.75;
+}
+
 
       
 
@@ -640,9 +675,6 @@
             gap: 15px;
         }
 
-        /* #first-scroll-buttons{
-          display: none;
-        } */
 
         /* Individual grid item styling */
         .sect4-grid {
@@ -710,51 +742,61 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 100px 50px;
   gap: 40px;
   background-color: white;
   color: var(--prussian);
-  font-family: 'Roboto', sans-serif; /* Apply body font globally to section */
+  font-family: 'Roboto', sans-serif; /* Body font for the section */
+  height: 400px;
 }
 
 #div1-sect5, #div2-sect5 {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 30px;
+  height: 100%;
 }
 
 #div1-sect5 {
   width: 40%;
   margin: auto;
-  justify-content: center;
   align-items: center;
   text-align: left;
 }
 
+/* Headline — Montserrat Extra Bold, 36–48px */
 #title-text-sect5 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: clamp(2.25rem, 5vw, 3rem); /* ~36px–48px */
+  font-weight: 800; /* Extra Bold per guideline */
+  font-size: clamp(2.25rem, 5vw, 3rem); /* 36px–48px */
   line-height: 1.2;
-  text-transform: none; /* Use title case */
+  text-transform: none; /* Title Case is fine */
   color: var(--prussian);
 }
 
+/* Body — Roboto Regular, 14–16px */
 #div2-sect5 {
   width: 55%;
-  font-size: clamp(0.9rem, 1.2vw, 1rem); /* ~14px–16px */
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 14px–16px */
   line-height: 1.75;
   color: var(--prussian);
 }
 
 #div2-sect5 p {
   margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
 
+/* CTA — Montserrat Bold, uppercase, 16px */
 #div2-sect5 a {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700; /* Call to action – bold emphasis */
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1rem; /* 16px */
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   margin-top: 10px;
   align-self: flex-start;
   text-decoration: none;
@@ -762,9 +804,10 @@
 
 
 
+
     
 
- /* Section */
+/* Section */
 #meet-the-co-builders {
   max-width: auto;
   margin: 60px auto;
@@ -773,15 +816,18 @@
   position: relative;
 }
 
+/* Heading — Montserrat Extra Bold, 36–48px digital */
 #meet-the-co-builders #heading-text {
-  font-size: 4.5rem;
-  font-weight: 700;
-  /* margin: 50px auto 100px; */
-  color: var(--prussian);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800; /* Extra Bold per guideline */
+  font-size: clamp(2.25rem, 5vw, 3rem); /* 36px–48px */
   line-height: 1.3;
+  color: var(--prussian);
 }
 
+/* Highlight — Montserrat (weight inherits from heading) */
 #meet-the-co-builders .highlight {
+  font-family: 'Montserrat', sans-serif;
   color: var(--emerald);
 }
 
@@ -1487,77 +1533,106 @@
         display: flex;
       }
 
-      #sect2-wrapper {
-        flex-direction: column;
-        padding: 10px;
-        padding: 30px 10px;
-      }
+      /* Section 2 Wrapper */
 
-      #div1, #div2 {
-        width: 100%;
-        padding: 30px 5px;
-        gap: 20px;
-        word-wrap: break-word;
-      }
+#sect2-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 10px;
+}
 
-      #div1-inner-wrapper {
-        gap: 20px;
-      }
+/* Primary Content Blocks */
+#div1,
+#div2 {
+  width: 100%;
+  padding: 30px 5px;
+  gap: 20px;
+  word-wrap: break-word;
+}
 
-      #title-text {
-        font-size: 3.5rem;
-      }
+/* Inner layout spacing */
+#div1-inner-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-      .intro-text {
-        font-size: 1rem;
-        width: 100%;
-        line-height: 2;
-        
-      }
+/* Headline — Montserrat Extra Bold, 36–48px */
+#title-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.25rem, 7.5vw, 3rem); /* 36px–48px */
+  line-height: 1.2;
+  text-transform: uppercase; /* allowed by guideline */
+}
 
-      #div2 img {
-        margin-top: 20px;
-        border-radius: 8px;
-      }
+/* Intro Paragraph — Roboto, 16px, comfy leading */
+.intro-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  line-height: 1.8;
+  width: 100%;
+}
 
-      #highlight-title{
-        font-size: 2.5rem;
-      }
+/* Images in #div2 (unchanged visually) */
+#div2 img {
+  margin-top: 20px;
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
 
-      .highlight-text {
-        font-size: 1rem;
-        width: 100%;
-        line-height: 1.5;
-        margin-top: 20px;
-      }
+/* Highlight Section Title — Montserrat Semi-Bold, 24–32px */
+#highlight-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600; /* Semi-Bold per guideline */
+  font-size: clamp(1.5rem, 6.5vw, 2rem); /* 24px–32px */
+  line-height: 1.35;
+  text-transform: uppercase; /* acceptable variant */
+}
 
-      
+/* Highlight Paragraph Text — Roboto 16px */
+.highlight-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  line-height: 1.6;
+  width: 100%;
+  margin-top: 20px;
+}
 
+/* Under Section Layout */
+#under-sect2 {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 10px;
+  font-size: 1rem; /* base */
+  margin-top: -20px;
+}
 
+/* Under Section Content Block — Roboto body */
+#under-sect2-div {
+  width: 100%;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  line-height: 1.7;
+  gap: 20px;
+}
 
-      #under-sect2 {
-        margin-top: -20px;
-        flex-direction: column;
-        padding: 30px 10px;
-        font-size: 1rem;
-      }
+/* Paragraph Styling */
+#under-sect2-div p {
+  width: 100%;
+  text-align: left;
+}
 
-      #under-sect2-div {
-        width: 100%;
-        padding: 0;
-        font-size: 1rem;
-        line-height: 1.5;
-        gap: 20px;
-      }
+/* Hide first paragraph (unchanged) */
+#under-sect2-div p:nth-of-type(1) {
+  display: none;
+}
 
-      #under-sect2-div p {
-        width: 100%;
-        text-align: left;
-      }
-
-      #under-sect2-div p:nth-of-type(1){
-        display: none;
-      }
 
 
   #sect4-grid {
