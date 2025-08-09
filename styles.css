@@ -10,6 +10,34 @@
   --lightgray: #f1f1f1;
 }
 
+/* --- Scroll-trigger animation helpers --- */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  will-change: opacity, transform;
+}
+
+.in-view [data-animate] {
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: calc(var(--d, 0) * 120ms); /* stagger */
+}
+
+/* Pause keyframes until visible (for elements that already have animation) */
+.animate-on-scroll { animation-play-state: paused !important; }
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate],
+  .in-view [data-animate],
+  .animate-on-scroll {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+
 * {
       box-sizing: border-box;
       margin: 0;
@@ -241,9 +269,9 @@
   margin-top: 2px;
 }
 
-.nav-invite:hover .nav-invite-slider {
+/* .nav-invite:hover .nav-invite-slider {
   animation: slide-out 1.5s ease-in-out forwards;
-}
+} */
 
 /* Dropdown wrapper */
 .has-dropdown {
@@ -266,11 +294,10 @@
   transform: translateX(-50%);
   display: none;
   flex-direction: column;
-  background: var(--prussian);
-  width: 250px;
+  min-width: 200px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   z-index: 100;
-  padding: 10px 0;
+  padding: 10px 0 0;
 }
 
 /* Dropdown links */
@@ -418,19 +445,19 @@
   width: 100%;
   margin-top: 150px;
   opacity: 0;
-  animation: slideUp 0.8s ease forwards;
-  animation-delay: 0.2s;
+  /* animation: slideUp 0.8s ease forwards; */
+  /* animation-delay: 0.2s; */
 }
 
 #div2 > p, #div1 p {
   opacity: 0;
-  animation: slideUp 0.8s ease forwards;
+  /* animation: slideUp 0.8s ease forwards; */
 }
 
-#div1-inner-wrapper > p:nth-of-type(1) { animation-delay: 0.2s; }
+/* #div1-inner-wrapper > p:nth-of-type(1) { animation-delay: 0.2s; }
 #div1-inner-wrapper > p:nth-of-type(2) { animation-delay: 0.6s; }
 #div2 > p:nth-of-type(2) { animation-delay: 0.6s; }
-#div2 > p:nth-of-type(3) { animation-delay: 1s; }
+#div2 > p:nth-of-type(3) { animation-delay: 1s; } */
 
 /* Headline — Montserrat Extra Bold, 36–48px digital */
 #title-text {
@@ -592,7 +619,7 @@
       height: 100%;
       object-fit: cover;
       transform: scale(1.2);
-      animation: scaled 3s ease-in-out 1 alternate;
+      /* animation: scaled 3s ease-in-out 1 alternate; */
     }
     .text-overlay {
       position: absolute;
@@ -612,7 +639,7 @@
       font-size: 25px;
     }
     .count span {
-      animation: fade-in 1s ease-in-out;
+      /* animation: fade-in 1s ease-in-out; */
       display: inline-block;
       font-size: 35px;
       margin-right: 8px;
@@ -663,9 +690,9 @@
       width: 28px
     }
 
-    #animated #animated-slider{
+    /* #animated #animated-slider{
       animation: slideUpDown 3s linear infinite;
-    }
+    } */
 
         /* Grid for sect4 */
         #sect4-grid {
@@ -694,7 +721,7 @@
         /* Text overlay wrapper in each grid item */
         .sect4-grid-overlay-text-wrapper {
             display: none;
-            animation: slideUp 0.8s ease forwards;
+            /* animation: slideUp 0.8s ease forwards; */
         }
 
         /* Black transparent background inside the grid items */
@@ -709,8 +736,8 @@
             background-color: rgba(0, 0, 0, 0.5);
             opacity: 0;
             transform: translateY(100%);
-            animation: fadeSlideUp 1s ease-out forwards;
-            animation-delay: 0.2s;
+            /* animation: fadeSlideUp 1s ease-out forwards; */
+            /* animation-delay: 0.2s; */
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -746,7 +773,7 @@
   background-color: white;
   color: var(--prussian);
   font-family: 'Roboto', sans-serif; /* Body font for the section */
-  height: min(400px, fit-content);
+  height: 480px;
   padding: 50px 20px;
 }
 
@@ -1454,7 +1481,15 @@
       .nav-wrapper{
         justify-content: space-between;
         padding: 10px 150px;
+        background-color: unset;
       }
+
+      .mobile-menu{
+        background-color: rgba(152, 223, 152, 0.399);
+      }
+
+
+
 
       .navbar{
         display: none;
@@ -1474,6 +1509,7 @@
         background: var(--prussian);
         color: var(--lightgray);
         margin-top: 0;
+        background-color: unset;
       }
 
       #meet-the-co-builders #heading-text {
@@ -1786,12 +1822,12 @@
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  animation: fadeInUp 1s ease forwards;
+  /* animation: fadeInUp 1s ease forwards; */
 }
 
-.fade-in.delay {
+/* .fade-in.delay {
   animation-delay: 0.5s;
-}
+} */
 
 
 
