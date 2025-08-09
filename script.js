@@ -192,3 +192,67 @@ function setupMobileAccordion() {
 setupMobileAccordion();
 
 
+
+  // Sections to animate on scroll (edit or extend freely)
+  const SECTION_SELECTORS = [
+    '#sect5-wrapper',
+    '#sect2-wrapper',
+    '#under-sect2',
+    '#transitions-engine',
+    '#co-builder-model-section',
+    '#meet-the-co-builders',
+    '#operational-model-section',
+    '#engine-room-wrapper',
+    '#sect4-grid',
+    '#faq-section',
+    'footer'
+  ];
+
+  // Which children inside each section should animate
+  // (broad but safe: headlines, paragraphs, lists, cards, CTAs, etc.)
+  const CHILD_TARGETS = [
+    'h1','h2','h3','p','ul','ol','li','a','img','blockquote',
+    '.pillar','.person-card','.black-transparent-bg',
+    '.sect4-grid','.sect4-grid-overlay-text-wrapper',
+    '#secretariat-text','#engine-room-banner'].join(',');
+
+  // Build observer
+  const sectionObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      const section = entry.target;
+      section.classList.add('in-view');
+
+      // Stagger child elements
+      const kids = section.querySelectorAll('[data-animate]');
+      kids.forEach((el, i) => el.style.setProperty('--d', i));
+
+      // Start any existing keyframe animations only now
+      section.querySelectorAll('.animate-on-scroll').forEach(el => {
+        el.style.animationPlayState = 'running';
+      });
+
+      obs.unobserve(section); // reveal once; remove if you want repeat
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -5% 0px' });
+
+  // Prepare each section
+  SECTION_SELECTORS.forEach(sel => {
+    document.querySelectorAll(sel).forEach(section => {
+      // Tag children to animate (once)
+      const children = section.querySelectorAll(CHILD_TARGETS);
+      children.forEach(el => el.setAttribute('data-animate', ''));
+
+      // If element already has CSS keyframes applied, pause until visible
+      section.querySelectorAll('*').forEach(el => {
+        const cs = getComputedStyle(el);
+        if (cs.animationName && cs.animationName !== 'none') {
+          el.classList.add('animate-on-scroll');
+          el.style.animationPlayState = 'paused';
+        }
+      });
+
+      sectionObserver.observe(section);
+    });
+  });
