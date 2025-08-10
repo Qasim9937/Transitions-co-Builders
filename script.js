@@ -14,6 +14,9 @@ window.addEventListener('scroll', () => {
       menu1.classList.remove('show');
     } else {
       navbar2.classList.add('visible');
+      menu2.classList.remove('show');
+      
+
     }
   } else {
     navbar2.classList.remove('visible');
@@ -29,6 +32,7 @@ function toggleMobileMenu() {
 function toggleMobileMenu2() {
   menu2.classList.toggle('show');
 }
+
 
 
 /* === Slideshow === */
