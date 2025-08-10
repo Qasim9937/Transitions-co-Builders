@@ -18,8 +18,8 @@
 }
 
 .in-view [data-animate] {
-  animation: fadeInUp 0.8s ease forwards;
-  animation-delay: calc(var(--d, 0) * 120ms); /* stagger */
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: calc(var(--d, 0) * 20ms); /* stagger */
 }
 
 /* Pause keyframes until visible (for elements that already have animation) */
@@ -128,7 +128,7 @@
    #nav-wrapper2 {
   background-color: var(--prussian);
   position: fixed;
-  top: -25px; /* hide offscreen initially */
+  top: -25px; /*hide offscreen initially */
   left: 0;
   width: 100%;
   z-index: 1200;
@@ -328,6 +328,23 @@
   margin: 3px 0 0 0;
 }
 
+#mobile-menu1 {
+  background: rgba(255, 255, 255, .2);
+  backdrop-filter: blur(10px) brightness(1.5) contrast(1.2);
+  /* color: black; or any other color that provides good contrast */
+}
+
+#mobile-menu1 a{
+  color: var(--prussian);
+  font-weight: bold;
+}
+
+#mobile-menu1 .mobile-dropdown a{
+  background-color: var(--prussian);
+  color: var(--lightgray);
+}
+
+
 
     /* Base mobile menu */
 .mobile-menu {
@@ -335,7 +352,7 @@
   flex-direction: column;
   padding: 15px 20px;
   position: fixed;
-  top: 90px;
+  top: 85px;
   right: 0;
   width: 100%;
   z-index: 9;
@@ -619,7 +636,7 @@
       height: 100%;
       object-fit: cover;
       transform: scale(1.2);
-      /* animation: scaled 3s ease-in-out 1 alternate; */
+      animation: scaled 3s ease-in-out 1 alternate;
     }
     .text-overlay {
       position: absolute;
@@ -1484,9 +1501,7 @@
         background-color: unset;
       }
 
-      .mobile-menu{
-        background-color: rgba(152, 223, 152, 0.399);
-      }
+      
 
 
 
@@ -1510,6 +1525,10 @@
         color: var(--lightgray);
         margin-top: 0;
         background-color: unset;
+      }
+
+      #nav-wrapper2{
+        top: 0px
       }
 
       #meet-the-co-builders #heading-text {
