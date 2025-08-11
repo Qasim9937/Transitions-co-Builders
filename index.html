@@ -6,8 +6,17 @@
   <title>Login – TAYARi.Transitions</title>
   <link rel="icon" type="image/png" href="GLYPH(1).png">
 
+
   <!-- ✅ Font Imports -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;600;700;800&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 
   <style>
     :root {
@@ -96,6 +105,7 @@
       text-align: center;
       gap: 20px;
       color: var(--charcoal);
+      position: relative;
     }
 
     .left-section img {
@@ -143,7 +153,7 @@
       border: none;
       border-radius: 50px;
       transition: background 0.3s ease;
-/*       margin-bottom: 120px; */
+      /* margin-bottom: 120px; */
     }
 
     .login-scroll-btn:hover {
@@ -233,17 +243,17 @@
     }
 
     .initiatives-div {
-      position: absolute;
-      bottom: 30px;
-      left: 100px;
-      padding: 16px 20px;
-      font-size: clamp(14px, 1.8vw, 18px);
-      background: black;
-      color: var(--lightgray);
-      padding: 20px;
-      font-size: 25px;
-      font-family: 'Nunito Sans', sans-serif;
-    }
+  position: absolute;
+  bottom: 30px;
+  right: 50px;          /* bottom-right by default */
+  left: auto;
+  padding: 16px 20px;
+  font-size: 25px;
+  background: black;
+  color: var(--lightgray);
+  font-family: 'Montserrat', sans-serif;
+  z-index: 2;
+}
 
     /* @media (max-width: 600px) {
       .left-section, .right-section {
@@ -270,61 +280,94 @@
       }
     } */
 
-    /* ---------- 1200px and down: nudge spacing ---------- */
-@media (max-width: 1200px) {
-  .left-section, .right-section { gap: 24px; }
-  .initiatives-div { left: 48px; bottom: 24px; padding: 12px 16px; }
-}
+/* ---------------- DEFAULT: Laptop & Desktop ≥1025px ---------------- */
+/* No @media needed — base styles above handle large screens */
 
-/* ---------- 992px and down: roomier form, safer badge ---------- */
-@media (max-width: 992px) {
-  .left-section, .right-section { padding: 48px 36px; }
-  .form-container { max-width: 520px; }
-  .initiatives-div { left: 24px; bottom: 20px; }
-}
+/* ---------------- Tablet: 601px–1024px ---------------- */
+@media (min-width: 601px) and (max-width: 1024px) {
 
-/* ---------- 768px and down: stack-friendly, no overlaps ---------- */
-@media (max-width: 768px) {
-  .left-section, .right-section {
-    padding: 36px 24px;
-    min-height: 100dvh;
+  /* Sections */
+  .left-section,
+  .right-section {
+    padding: 48px 36px;
+    gap: 24px;
   }
 
-  /* Allow typewriter to wrap if needed */
-  #typewriter { white-space: normal; text-align: center; }
+  /* Form */
+  .form-container {
+    max-width: 520px;
+  }
 
-  /* Full-width button for easier tap */
-  .login-scroll-btn { width: 60%; max-width: 320px; margin-bottom: 40px; }
-
-  /* Make the badge an inline chip so it won't overlap anything */
+  /* Initiatives badge */
   .initiatives-div {
-    position: static;
-    margin: 10px auto 0;
-    /* background: transparent; */
-    /* color: var(--charcoal); */
-    /* border: 1px solid rgba(0,0,0,0.08); */
-    padding: 20px;
+    bottom: 24px;
+    right: 24px;
+    left: auto;
+    padding: 14px 18px;
     font-size: 18px;
-    /* max-width: max-content; */
-    /* border-radius: 999px; */
   }
+
+  /* Headings adjustments if needed */
+  .left-section h1 { font-size: 32px; }
+  .left-section h2 { font-size: 20px; }
 }
 
-/* ---------- 480px and down: compact type & form ---------- */
-@media (max-width: 480px) {
-  .left-section, .right-section { padding: 28px 16px; }
+/* ---------------- Mobile: ≤600px ---------------- */
+@media (max-width: 600px) {
+
+  /* Sections stack nicely */
+  .left-section,
+  .right-section {
+    padding: 28px 16px;
+    min-height: 100dvh;
+    flex: none;
+    width: 100%;
+  }
+
+  /* Headings & typewriter text */
   .left-section h1 { font-size: 24px; }
   .left-section h2 { font-size: 16px; }
-  #typewriter { font-size: 16px; }
-  .form-container { padding: 22px 18px; border-radius: 12px; }
-  label, input, .tagline, .cta-under-form { font-size: 14px; line-height: 1.45; }
+  #typewriter {
+    font-size: 16px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* Login button */
+  .login-scroll-btn {
+    width: 60%;
+    max-width: 320px;
+    margin-bottom: 40px;
+  }
+
+  /* Form container */
+  .form-container {
+    padding: 22px 18px;
+    border-radius: 12px;
+  }
+
+  /* Label, inputs, tagline */
+  label,
+  input,
+  .tagline,
+  .cta-under-form {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  /* Initiatives badge pinned to bottom-left */
+  .initiatives-div {
+    position: absolute;
+    bottom: 20px;
+    left: 16px;
+    right: auto;
+    margin: 0;
+    padding: 12px 16px;
+    font-size: 14px;
+    text-align: left;
+  }
 }
 
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .login-scroll-btn:hover { transform: none; }
-  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-}
   </style>
 </head>
 
@@ -418,5 +461,3 @@
   </script>
 </body>
 </html>
-
-
