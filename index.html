@@ -31,6 +31,7 @@
 
     body {
       display: flex;
+      flex-direction: column;
       min-height: 100dvh;
       width: 100vw;
       background-color: var(--lightgray);
@@ -38,6 +39,7 @@
       font-family: 'Roboto', sans-serif;
       font-size: 15px;
       line-height: 1.6;
+      height: 200vh;
     }
 
     .left-section, .right-section {
@@ -46,9 +48,9 @@
       align-items: center;
       justify-content: center;
       gap: 30px;
-      padding: 50px;
-      height: 100dvh;
-      width: 50%;
+      padding: 100px;
+      height: 100vh;
+      /* width: 50%; */
     }
 
     .left-section {
@@ -88,23 +90,25 @@
     }
 
     #typewriter-container {
-      height: 30px;
+      height: 20px;
+      padding: 10px;
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     #typewriter {
-      color: var(--saffron);
+      color: var(--lightgray);
       font-family: 'Montserrat', sans-serif;
       font-style: italic;
-      font-size: 18px;
+      font-size: 28px;
       font-weight: 600;
       white-space: nowrap;
     }
 
     .login-scroll-btn {
-      display: none;
+      /* display: none; */
       margin-top: 30px;
       padding: 14px;
       background-color: var(--emerald);
@@ -112,9 +116,10 @@
       font-family: 'Montserrat', sans-serif;
       font-weight: bold;
       border: none;
-      border-radius: 8px;
+      border-radius: 50px;
       font-size: 16px;
       cursor: pointer;
+      width: 150px;
       transition: background 0.3s ease;
     }
 
@@ -228,10 +233,10 @@
     }
 
     @media (max-width: 600px) {
-      body {
+      /* body {
         flex-direction: column;
         height: 200dvh;
-      }
+      } */
 
       .left-section, .right-section {
         flex: none;
@@ -260,12 +265,17 @@
 </head>
 
 <body>
+
+  
+      
   <!-- ✅ Left Section -->
   <div class="left-section">
-    <img src="GLYPH(1).png" alt="Logo" />
+
+    <a class="logo" href="#"><img src="GLYPH(1).png" alt="Logo" style="width: 70px; height: 70px;" /></a>
+
     <h2>Welcome to the</h2> 
-    <h1>.transitions <br> co-Builders Hub</h1>
-    <p class="tagline">“An African-led social enterprise transforming the continent’s employability and entrepreneurship landscape”</p>
+    <h1>.transitions co-Builders Hub</h1>
+    <p class="tagline">Home of</p>
 
     <div id="typewriter-container">
       <p id="typewriter"></p>
@@ -297,7 +307,7 @@
   </div>
 
   <script>
-    const words = ["Collaborative Leadership", "Distributed Ownership", "Ecosystem-level Accountability"];
+    const words = ["Ingenuity", "Intelligence", "Wisdom", "Patience"];
     const speed = 100; 
     const delay = 1500;
 
