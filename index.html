@@ -7,9 +7,7 @@
   <link rel="icon" type="image/png" href="GLYPH(1).png">
 
   <!-- ✅ Font Imports -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet"/>
-
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;600;700;800&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -27,19 +25,57 @@
       padding: 0;
     }
 
-    html { scroll-behavior: smooth; }
+    html { 
+      scroll-behavior: smooth; }
 
+    /* Typography Base */
     body {
       display: flex;
       flex-direction: column;
       min-height: 100dvh;
       width: 100vw;
-      background-color: var(--lightgray);
+      /* background-color: var(--lightgray); */
+      /* color: var(--charcoal); */
+      font-family: "Plus Jakarta Sans", "Poppins", Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.625;
+      height: 100vh;
+    }
+
+    /* Headings */
+    h1, h2, h3 {
+      font-family: "Plus Jakarta Sans", "Poppins", Arial, sans-serif;
+      font-weight: 700;
+      line-height: 1.3;
       color: var(--charcoal);
-      font-family: 'Roboto', sans-serif;
-      font-size: 15px;
-      line-height: 1.6;
-      height: 200vh;
+    }
+
+    /* Tagline & Secondary Text */
+    .tagline,
+    .cta-under-form{
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.42857;
+    }
+
+
+
+    /* Buttons */
+    button,
+    .login-scroll-btn {
+      font-family: "Plus Jakarta Sans", "Poppins", Arial, sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.42857;
+    }
+
+    /* Inputs & Labels */
+    label,
+    input {
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.42857;
     }
 
     .left-section, .right-section {
@@ -48,17 +84,18 @@
       align-items: center;
       justify-content: center;
       gap: 30px;
-      padding: 100px;
-      height: 100vh;
-      /* width: 50%; */
+      min-height: 100dvh;
+      height: auto;
+      padding: clamp(32px, 5vw, 100px);
+      /* padding: 100px; */
+      /* height: 100vh; */
     }
 
     .left-section {
       flex-direction: column;
       text-align: center;
       gap: 20px;
-      background: linear-gradient(135deg, var(--prussian), #061f3a);
-      color: white;
+      color: var(--charcoal);
     }
 
     .left-section img {
@@ -68,30 +105,20 @@
     }
 
     .left-section h1 {
-      font-size: 40px;
       font-weight: 800;
-      /* text-transform: uppercase; */
+      font-size: clamp(28px, 3.2vw, 40px);
       letter-spacing: 0.5px;
-      line-height: 1.3;
-      font-family: 'Montserrat', sans-serif;
     }
 
     .left-section h2 {
-      font-size: 26px;
       font-weight: 600;
-      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(18px, 2.2vw, 26px);
     }
 
-    .tagline {
-      font-size: 16px;
-      font-family: 'Roboto', sans-serif;
-      max-width: 400px;
-      color: var(--emerald)
-    }
-
+    
     #typewriter-container {
-      height: 20px;
-      padding: 10px;
+      min-height: 36px;
+      padding: 8px 10px;
       width: 100%;
       display: flex;
       align-items: center;
@@ -99,28 +126,24 @@
     }
 
     #typewriter {
-      color: var(--lightgray);
-      font-family: 'Montserrat', sans-serif;
-      font-style: italic;
-      font-size: 28px;
-      font-weight: 600;
+      font-size: clamp(16px, 1.7vw, 18px);
+      font-weight: 700;
       white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .login-scroll-btn {
-      /* display: none; */
       margin-top: 30px;
-      padding: 14px;
-      background-color: var(--emerald);
-      color: var(--charcoal);
-      font-family: 'Montserrat', sans-serif;
+      background-color: var(--prussian);
+      color:white;
       font-weight: bold;
+      width: clamp(100px, 30vw, 220px);
+      padding: 12px 18px;
       border: none;
       border-radius: 50px;
-      font-size: 16px;
-      cursor: pointer;
-      width: 150px;
       transition: background 0.3s ease;
+      margin-bottom: 120px;
     }
 
     .login-scroll-btn:hover {
@@ -134,6 +157,7 @@
       justify-content: center;
       flex-direction: column;
       padding-top: 100px;
+      display: none;
     }
 
     .form-container {
@@ -144,7 +168,6 @@
       max-width: 420px;
       width: 100%;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      font-family: 'Roboto', sans-serif;
     }
 
     .form-logo {
@@ -163,13 +186,6 @@
     .form-logo h3 {
       font-size: 28px;
       font-weight: 700;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    label {
-      display: block;
-      font-weight: 500;
-      margin-bottom: 6px;
     }
 
     input[type="email"],
@@ -179,10 +195,8 @@
       margin-bottom: 20px;
       border: none;
       border-radius: 8px;
-      font-size: 15px;
       background-color: white;
       color: var(--charcoal);
-      font-family: 'Roboto', sans-serif;
     }
 
     input:focus {
@@ -193,13 +207,9 @@
       width: 100%;
       background-color: var(--emerald);
       color: var(--charcoal);
-      font-family: 'Montserrat', sans-serif;
-      font-weight: bold;
       padding: 12px;
       border: none;
       border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
       transition: background 0.3s ease;
     }
 
@@ -216,53 +226,26 @@
       text-align: center;
     }
 
-    .security-note {
-      margin-top: 12px;
-      font-size: 14px;
-      color: var(--saffron);
-      text-align: center;
-      font-style: italic;
-    }
-
     .cta-under-form {
-      font-size: 15px;
-      color: var(--charcoal);
       font-weight: 600;
       text-align: center;
-      font-family: 'Montserrat', sans-serif;
       font-style: italic;
     }
 
-    .initiative-byline {
-  margin-top: 8px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-style: italic;
-  font-size: clamp(12px, 1.2vw, 14px);
-  letter-spacing: 0.02em;
-  color: rgba(255,255,255,0.75);
-  text-align: center;
-}
+    .initiatives-div {
+      position: absolute;
+      bottom: 30px;
+      left: 100px;
+      padding: 16px 20px;
+      font-size: clamp(14px, 1.8vw, 18px);
+      background: black;
+      color: var(--lightgray);
+      padding: 20px;
+      font-size: 25px;
+      font-family: 'Nunito Sans', sans-serif;
+    }
 
-.initiative-byline .brand-mark {
-  color: var(--saffron);
-}
-
-@media (max-width: 480px) {
-  .initiative-byline {
-    margin-top: 6px;
-    font-size: 12px;
-    opacity: 0.85;
-  }
-}
-
-
-    @media (max-width: 600px) {
-      /* body {
-        flex-direction: column;
-        height: 200dvh;
-      } */
-
+    /* @media (max-width: 600px) {
       .left-section, .right-section {
         flex: none;
         width: 100%;
@@ -285,41 +268,97 @@
       .security-note {
         font-size: 12px;
       }
-    }
+    } */
+
+    /* ---------- 1200px and down: nudge spacing ---------- */
+@media (max-width: 1200px) {
+  .left-section, .right-section { gap: 24px; }
+  .initiatives-div { left: 48px; bottom: 24px; padding: 12px 16px; }
+}
+
+/* ---------- 992px and down: roomier form, safer badge ---------- */
+@media (max-width: 992px) {
+  .left-section, .right-section { padding: 48px 36px; }
+  .form-container { max-width: 520px; }
+  .initiatives-div { left: 24px; bottom: 20px; }
+}
+
+/* ---------- 768px and down: stack-friendly, no overlaps ---------- */
+@media (max-width: 768px) {
+  .left-section, .right-section {
+    padding: 36px 24px;
+    min-height: 100dvh;
+  }
+
+  /* Allow typewriter to wrap if needed */
+  #typewriter { white-space: normal; text-align: center; }
+
+  /* Full-width button for easier tap */
+  .login-scroll-btn { width: 60%; max-width: 320px; margin-bottom: 40px; }
+
+  /* Make the badge an inline chip so it won't overlap anything */
+  .initiatives-div {
+    position: static;
+    margin: 10px auto 0;
+    /* background: transparent; */
+    /* color: var(--charcoal); */
+    /* border: 1px solid rgba(0,0,0,0.08); */
+    padding: 20px;
+    font-size: 18px;
+    /* max-width: max-content; */
+    /* border-radius: 999px; */
+  }
+}
+
+/* ---------- 480px and down: compact type & form ---------- */
+@media (max-width: 480px) {
+  .left-section, .right-section { padding: 28px 16px; }
+  .left-section h1 { font-size: 24px; }
+  .left-section h2 { font-size: 16px; }
+  #typewriter { font-size: 16px; }
+  .form-container { padding: 22px 18px; border-radius: 12px; }
+  label, input, .tagline, .cta-under-form { font-size: 14px; line-height: 1.45; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .login-scroll-btn:hover { transform: none; }
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
   </style>
 </head>
 
 <body>
-
-  
-      
   <!-- ✅ Left Section -->
   <div class="left-section">
-
-    <a class="logo" href="#"><img src="GLYPH(1).png" alt="Logo" style="width: 70px; height: 70px;" /></a>
-
+    <a class="logo" href="#"><img src="GLYPH(1).png" alt="Logo" /></a>
     <h2>Welcome to the</h2> 
     <h1>.transitions co-Builders Hub</h1>
     <p class="tagline">Home of</p>
 
     <div id="typewriter-container">
-      <p id="typewriter"></p>
+      <p id="typewriter">Ingenuity | Intelligence | Wisdom</p>
     </div>
 
-    <p class="initiative-byline" aria-label="initiative attribution"> an initiative of <span class="brand-mark">Tayari.transitions</span> </p>
+    <div class="initiatives-div"> 
+      <p>AN INITIATIVE OF</p> 
+      <p>Tayari.transitions</p>
+    </div>
 
+    <button class="login-scroll-btn"
+  onclick="document.getElementById('right-section').style.display='flex';
+           document.getElementById('loginForm').scrollIntoView({behavior:'smooth'});">
+  Login ↓
+</button>
 
-    <button class="login-scroll-btn" onclick="document.getElementById('loginForm').scrollIntoView({ behavior: 'smooth' })">
-      Login ↓
-    </button>
   </div>
 
   <!-- ✅ Right Section -->
-  <div class="right-section">
+  <div class="right-section" id="right-section">
     <div class="form-container">
       <div class="form-logo">
         <img src="GLYPH(1).png" alt="Logo" />
-        <h3>Sign In</h3>
+        <h3 style="color: white;">Sign In</h3>
       </div>
       <form id="loginForm">
         <label for="email">Email</label>
@@ -328,39 +367,14 @@
         <input type="password" id="password" placeholder="Password" required />
         <button type="submit">Login</button>
         <p id="errorText" class="error-text">Incorrect email or password.</p>
-        <p class="security-note">🔒 Your credentials are secure and encrypted.</p>
       </form>
     </div>
     <p class="cta-under-form">co-Build to co-Own what you help to co-Create</p>
   </div>
 
-  <script>
-    const words = ["Ingenuity", "Intelligence", "Wisdom", "Patience"];
-    const speed = 100; 
-    const delay = 1500;
 
-    const el = document.getElementById("typewriter");
-    let wordIndex = 0;
-    let charIndex = 0;
 
-    function typeWord() {
-      const currentWord = words[wordIndex];
 
-      if (charIndex <= currentWord.length) {
-        el.textContent = currentWord.substring(0, charIndex);
-        charIndex++;
-        setTimeout(typeWord, speed);
-      } else {
-        setTimeout(() => {
-          charIndex = 0;
-          wordIndex = (wordIndex + 1) % words.length;
-          typeWord();
-        }, delay);
-      }
-    }
-
-    typeWord();
-  </script>
 
   <!-- Firebase Auth Script -->
   <script type="module">
