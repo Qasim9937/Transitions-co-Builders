@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login – TAYARi.Transitions</title>
   <link rel="icon" type="image/png" href="GLYPH(1).png">
+  <link href="https://fonts.cdnfonts.com/css/didot-2" rel="stylesheet">
+
 
 
   <!-- ✅ Font Imports -->
@@ -43,46 +45,122 @@
       flex-direction: column;
       min-height: 100dvh;
       width: 100vw;
-      /* background-color: var(--lightgray); */
-      /* color: var(--charcoal); */
-      font-family: "Plus Jakarta Sans", "Poppins", Arial, sans-serif;
-      font-size: 16px;
+      /* color: #f0ece9; */
+      font-family: Plus Jakarta Sans, sans-serif;
+      font-family: Didot,Times New Roman,sans-serif;
+      font-size: 14px;
       font-weight: 300;
       line-height: 1.625;
-      height: 100dvh;
+      /* height: 100dvh; */
+      position: relative;
     }
+
+    @keyframes flow-fade-in {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideUpDown {
+      0% {
+        transform: translateY(0px)
+       }
+      100% { 
+        transform: translateY(16px) 
+      }
+    }
+
+    @keyframes scaled {
+      from { transform: scale(1); }
+      to { transform: scale(1.2); }
+    }
+
+    @keyframes slide-out {
+      0% { width: 100%; align-self: flex-end; }
+      50% { width: 0; align-self: flex-end; }
+      51% { width: 0; align-self: flex-start; }
+      100% { width: 100%; align-self: flex-start; }
+    }
+
+    header{
+      z-index: 500;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .logo{
+      margin-top: 35px;
+    }
+
+    .logo-text {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      text-align: left;
+    }
+
+    .nav-invite {
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
+  color: white;
+  text-align: center;
+  letter-spacing: .08rem;
+  text-transform: uppercase;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  font-family: Plus Jakarta Sans,sans-serif;
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 1.33333;
+  text-decoration: none;
+  transition: color .4s cubic-bezier(.645,.045,.355,1);
+  display: flex;
+}
+
+.nav-invite-slider {
+  background-color: orange;
+  height: 2px;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.nav-invite:hover .nav-invite-slider {
+  animation: slide-out 1.5s ease-in-out forwards;
+}
+
+    
 
     /* Headings */
     h1, h2, h3 {
-      font-family: "Plus Jakarta Sans", "Poppins", Arial, sans-serif;
       font-weight: 700;
-      line-height: 1.3;
-      color: var(--charcoal);
+      line-height: 1.2;
     }
 
     /* Tagline & Secondary Text */
     .tagline,
     .cta-under-form{
-      font-family: "Poppins", Arial, sans-serif;
       font-size: 16px;
       line-height: 1.42857;
+      
     }
 
 
-
-    /* Buttons */
-    button,
-    .login-scroll-btn {
-      font-family: "Plus Jakarta Sans", "Poppins", Arial, sans-serif;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 1.42857;
-    }
 
     /* Inputs & Labels */
     label,
     input {
-      font-family: "Poppins", Arial, sans-serif;
       font-size: 14px;
       line-height: 1.42857;
     }
@@ -96,6 +174,7 @@
       min-height: 100dvh;
       height: auto;
       padding: clamp(32px, 5vw, 100px);
+      font-family: Plus Jakarta Sans,sans-serif;
       /* padding: 100px; */
       /* height: 100vh; */
     }
@@ -104,8 +183,9 @@
       flex-direction: column;
       text-align: center;
       gap: 20px;
-      color: var(--charcoal);
+      color: white;
       position: relative;
+      z-index: 200;
     }
 
     .left-section img {
@@ -125,48 +205,16 @@
       font-size: clamp(18px, 2.2vw, 26px);
     }
 
-    
-    #typewriter-container {
-      min-height: 36px;
-      padding: 8px 10px;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #typewriter {
-      font-size: clamp(16px, 1.7vw, 18px);
-      font-weight: 700;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .login-scroll-btn {
-      margin-top: 30px;
-      background-color: var(--prussian);
-      color:white;
-      font-weight: bold;
-      width: clamp(100px, 30vw, 220px);
-      padding: 12px 18px;
-      border: none;
-      border-radius: 50px;
-      transition: background 0.3s ease;
-      /* margin-bottom: 120px; */
-    }
-
-    .login-scroll-btn:hover {
-      transform: scale(1.01) translateY(-2px);
-    }
+  
 
     .right-section {
-      background-color: white;
+      background-color: #f0ece9;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       padding-top: 100px;
+      color: black;
       display: none;
     }
 
@@ -243,46 +291,156 @@
     }
 
     .initiatives-div {
-  position: absolute;
-  bottom: 30px;
-  right: 50px;          /* bottom-right by default */
-  left: auto;
-  padding: 16px 20px;
-  font-size: 25px;
-  background: black;
-  color: var(--lightgray);
-  font-family: 'Montserrat', sans-serif;
-  z-index: 2;
+      position: absolute;
+      bottom: 30px;
+      right: 50px;          
+      left: auto;
+      padding: 16px 20px;
+      grid-column-gap: .53125rem;
+      grid-row-gap: .53125rem;
+      letter-spacing: .17em;
+      flex-flow: column;
+      flex: none;
+      font-size: .875rem;
+      font-weight: 500;
+      line-height: 1.71429;
+      display: flex;
+      z-index: 2;
+      font-family: Plus Jakarta Sans,sans-serif;
 }
 
-    /* @media (max-width: 600px) {
-      .left-section, .right-section {
-        flex: none;
-        width: 100%;
-        height: 100dvh;
-        padding: 30px 20px;
-      }
+/* SLIDESHOW STYLES */
+    
+    .slideshow-container {
+      background: linear-gradient(to bottom, grey, white);
+      /* position: relative; */
+      width: 100%;
+      height: 100dvh;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+    .slide {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.2);
+      animation-delay: 3s;
+      animation: scaled 1.5s ease-in-out 1 alternate;
+    }
+    
+    #home-text{
+      position: absolute; 
+      z-index: 400; 
+      color: white; 
+      bottom: 200px; 
+      left: 40px; 
+      font-size: 1rem; 
+      font-family: 'Roboto', serif;
+    }
 
-      .left-section h1 {
-        font-size: 28px;
-      }
 
-      .login-scroll-btn {
-        display: inline-block;
-      }
+    .text-overlay {
+      position: absolute;
+      bottom: 100px;
+      left: 40px;
+      color: #f0ece9;
+      letter-spacing: -.04em;
+      white-space: nowrap;
+      padding-top: 1.5rem;
+      padding-bottom: 1.75rem;
+      padding-right: 1rem;
+      font-family: Didot,Times New Roman,sans-serif;
+      font-size: 4rem;
+      font-weight: 400;
+      line-height: 1;
+      transform: translate3d(0rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+      transform-style: preserve-3d;
+      opacity: 1;
+      animation: flow-fade-in 1s ease forwards;
+    }
 
-      .form-container {
-        padding: 28px;
-      }
 
-      .security-note {
-        font-size: 12px;
-      }
-    } */
 
-/* ---------------- DEFAULT: Laptop & Desktop ≥1025px ---------------- */
-/* No @media needed — base styles above handle large screens */
 
+    .count {
+      position: absolute;
+      bottom: 70px;
+      left: 40px;
+      color: grey;
+      font-size: 1.5rem;
+      font-family: Plus Jakarta Sans,sans-serif;
+      letter-spacing: -.04em;
+      font-weight: 300;
+      line-height: 1;
+      overflow: hidden;
+}
+    .count span {
+      /* animation: fade-in 1s ease-in-out; */
+      display: inline-block;
+      font-size: 2rem;
+      margin-right: 8px;
+      color: white;
+    }
+    .progress-bar {
+      position: absolute;
+      bottom: 50px;
+      left: 40px;
+      width: 260px;
+      height: 2px;
+      background: grey;
+      overflow: hidden;
+    }
+    .progress {
+      height: 100%;
+      background: white;
+    }
+    .prev, .next {
+      position: absolute;
+      bottom: 70px;
+      left: 40px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 8px 5px;
+      font-size: 20px;
+      border-radius: 5px;
+      background-color: transparent;
+    }
+    .next {
+      left: 80px;
+    }
+
+    #animated {
+      display: none;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      border-radius: 25px;
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      z-index: 10;
+      padding: 5px;
+      border: 1.5px solid grey;
+      height: 45px;
+      width: 28px
+    }
+
+    #animated #animated-slider{
+      animation: slideUpDown 1s linear infinite;
+    }
+
+
+   
 /* ---------------- Tablet: 601px–1024px ---------------- */
 @media (min-width: 601px) and (max-width: 1024px) {
 
@@ -315,6 +473,51 @@
 /* ---------------- Mobile: ≤600px ---------------- */
 @media (max-width: 600px) {
 
+  .logo-text{
+    font-size: .85rem;
+  }
+
+  h1{
+    margin-bottom: 100px
+  }
+
+  #home-text{
+    bottom: 260px;
+  }
+
+  .text-overlay {
+        bottom: 160px;
+        left: 30px;
+        font-size: 4rem;
+      }
+      .count {
+        bottom: 135px;
+        left: 30px;
+        font-size: 18px;
+      }
+      .count span {
+        font-size: 24px;
+      }
+      .progress-bar {
+        bottom: 120px;
+        left: 30px;
+        width: 70%;
+      }
+      .prev, .next {
+        bottom: 120px;
+        left: 30px;
+        font-size: 16px;
+      }
+    
+      .next {
+        left: 70px;
+      }
+
+      #animated {
+        display: flex;
+      }
+
+
   /* Sections stack nicely */
   .left-section,
   .right-section {
@@ -327,18 +530,8 @@
   /* Headings & typewriter text */
   .left-section h1 { font-size: 24px; }
   .left-section h2 { font-size: 16px; }
-  #typewriter {
-    font-size: 16px;
-    white-space: normal;
-    text-align: center;
-  }
 
-  /* Login button */
-  .login-scroll-btn {
-    width: 60%;
-    max-width: 320px;
-    margin-bottom: 40px;
-  }
+
 
   /* Form container */
   .form-container {
@@ -372,32 +565,74 @@
 </head>
 
 <body>
+
+  
   <!-- ✅ Left Section -->
   <div class="left-section">
-    <a class="logo" href="#"><img src="GLYPH(1).png" alt="Logo" /></a>
+
+    <header>
+    <div class="logo-wrapper" style="display: flex; align-items: center; gap: 10px; color: white; font-weight: bold;">
+      <a class="logo" href="#"><img src="GLYPH(1).png" alt="Logo" style="width: 70px; height: 70px;" /></a>
+      <a class="logo-text" href="#">.transitions co-Builders<br> Fellowship</a>
+    </div>
+
+
+
+    <a class="nav-invite" href="#right-section">
+      <p>Login</p>
+      <div class="nav-invite-slider"></div>
+    </a>
+  </header>
+
+   
     <h2>Welcome to the</h2> 
     <h1>.transitions co-Builders Hub</h1>
-    <p class="tagline">Home of</p>
 
-    <div id="typewriter-container">
-      <p id="typewriter">Ingenuity | Intelligence | Wisdom</p>
-    </div>
 
     <div class="initiatives-div"> 
       <p>AN INITIATIVE OF</p> 
-      <p>Tayari.transitions</p>
+      <p>TAYARI.transitions</p>
     </div>
-
-    <button class="login-scroll-btn"
-  onclick="document.getElementById('right-section').style.display='flex';
-           document.getElementById('loginForm').scrollIntoView({behavior:'smooth'});">
-  Login ↓
-</button>
 
   </div>
 
-  <!-- ✅ Right Section -->
-  <div class="right-section" id="right-section">
+  <div class="slideshow-container">
+    <p id="home-text">Home of</p>
+    <div id="animated">
+      <div id="animated-slider" style="width: 5px; height: 5px; background-color: whitesmoke; border-radius: 25px"></div>
+    </div>
+    <div class="slide">
+      <img src="https://cdn.prod.website-files.com/67642840b71c680550707f53/681ef04d8cd7e54d8d68ea30_Patience.webp" alt="Ingenuity" />
+      <div class="text-overlay">Ingenuity</div>
+      <p class="count"><span>01</span>/04</p>
+      <div class="progress-bar"><div class="progress" style="width:25%;"></div></div>
+    </div>
+    <div class="slide">
+      <img src="https://cdn.prod.website-files.com/67642840b71c680550707f53/681ef04d8cd7e54d8d68ea3f_Ingenuity.webp" alt="Intelligence" />
+      <div class="text-overlay">Intelligence</div>
+      <p class="count"><span>02</span>/04</p>
+      <div class="progress-bar"><div class="progress" style="width:50%;"></div></div>
+    </div>
+
+    <div class="slide">
+      <img src="https://cdn.prod.website-files.com/67642840b71c680550707f53/681ef04d8cd7e54d8d68ea76_image%2013%20(4).avif" alt="Wisdom" />
+      <div class="text-overlay">Wisdom</div>
+      <p class="count"><span>03</span>/04</p>
+      <div class="progress-bar"><div class="progress" style="width:75%;"></div></div>
+    </div>
+    <div class="slide">
+      <img src="https://cdn.prod.website-files.com/67642840b71c680550707f53/681ef04d8cd7e54d8d68ea21_Intelligence.webp" alt="Patience" />
+
+      <div class="text-overlay">Patience</div>
+      <p class="count"><span>04</span>/04</p>
+      <div class="progress-bar"><div class="progress" style="width:100%;"></div></div>
+    </div>
+    
+    <!-- <button class="prev" onclick="changeSlide(-1)">❮</button>
+    <button class="next" onclick="changeSlide(1)">❯</button> -->
+  </div>
+
+   <div class="right-section" id="right-section">
     <div class="form-container">
       <div class="form-logo">
         <img src="GLYPH(1).png" alt="Logo" />
@@ -452,12 +687,54 @@
         .then(() => {
           window.location.href = "landing.html";
         })
-        .catch(() => {
-          errorText.style.display = "block";
-          loginButton.disabled = false;
-          loginButton.textContent = "Login";
-        });
+        .catch((error) => {
+            if (error.code === 'auth/user-not-found') {
+              errorText.textContent = "No account found with this email.";
+            } else if (error.code === 'auth/wrong-password') {
+              errorText.textContent = "Incorrect password.";
+            } else {
+              errorText.textContent = "Login failed. Please try again.";
+            }
+            errorText.style.display = "block";
+            loginButton.disabled = false;
+            loginButton.textContent = "Login";
+          });
     });
+
   </script>
+
+    <script>
+
+
+    /* === Slideshow === */
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(index) {
+  slides.forEach(slide => slide.style.display = "none");
+  slides[index].style.display = "block";
+}
+
+function changeSlide(step) {
+  slideIndex = (slideIndex + step + slides.length) % slides.length;
+  showSlide(slideIndex);
+}
+
+function autoSlide() {
+  changeSlide(1);
+  setTimeout(autoSlide, 3000);
+}
+
+
+showSlide(slideIndex);
+setTimeout(autoSlide, 3000);
+
+
+// Function to show the login form when the "Login" button is clicked
+document.querySelector('.nav-invite').addEventListener('click', function() {
+  document.querySelector('.right-section').style.display = 'flex';  
+});
+
+</script>
 </body>
 </html>
