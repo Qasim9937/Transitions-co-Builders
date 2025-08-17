@@ -9,8 +9,8 @@ html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;font-family:sans-se
 
       @media (max-width: 600px){
         grid-template-columns: 1fr;
-        gap: 50px;
-        padding: 50px 50px;
+        gap: 20px;
+        padding: 50px 20px;
 
         .div1, .div2{
           gap: 20px;
@@ -43,7 +43,7 @@ html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;font-family:sans-se
       .black-bg{
         background:  black;
         color: white;
-        padding: 50px 2px;
+        padding: 50px 20px;
         width: 100%;
         font-size: 3.5rem;
 
