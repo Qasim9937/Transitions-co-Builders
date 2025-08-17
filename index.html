@@ -2,7 +2,157 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/><!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JavaScript Basics</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width: device-width, initial-scale: 1.0">
+    </head>
+    <body>
+        <h1>JavaScript Basics</h1>
+
+
+        <script>
+            let x = 3
+            let y = 4
+
+            console.log(x + y)
+
+            // Typecasting = Converting data from one type to another
+
+            let num1 = 3
+            console.log(typeof num1)
+
+            console.log(parseFloat(num1))
+            
+
+            num2 = 4.56
+            console.log(parseInt(num2))
+
+
+            string = '345'
+
+           console.log(parseInt(string))
+
+           string2 = "3.45"
+           console.log(parseInt(string2))
+
+           console.log(parseFloat(string2))
+
+
+           console.log(parseInt('ball'))
+
+
+           console.log(3 / 'lfkdfjal')  
+
+
+           num = 34
+
+           console.log(num.toString())
+
+
+           // Slicing a string / Indexing
+
+           name = 'Adewale'
+
+            console.log(name[0])
+
+            console.log(name[5])
+
+            console.log(name.length)
+
+            console.log(name[name.length - 1])
+
+            console.log(name.at(-1))
+
+            console.log(name.slice(0,3))
+            console.log(name.substring(0,name.length))
+
+            console.log(name.toUpperCase())
+
+            console.log(name.toLowerCase())
+
+            name = name.toLowerCase()
+            console.log(name)
+
+            name = name[0].toUpperCase() + name.slice(1)
+
+            console.log(name)
+
+
+            // Concatenation - Addition of strings
+
+            console.log('book' + 'shelf')
+
+            // strings
+            // Numbers - floats & Integers
+
+            console.log(typeof `food`)
+            console.log(typeof 'food')
+            console.log(typeof "food")
+
+
+            // Numbers - Integers and Floats
+            console.log(3 * 5)
+            console.log(5/2)
+            console.log(5 + 2)
+            console.log(5 - 2)
+            console.log(5 ** 2)
+
+            console.log( 5 % 2) 
+            console.log(10 % 6) 
+
+            // Floor Division
+            console.log(Math.floor(5 / 2) )  
+
+            // Round a number
+            console.log(Math.round( 10 / 3))
+
+
+            console.log(Math.ceil(10 / 3))
+
+            console.log((10 / 3).toFixed(2))
+
+            console.log((10 / 3).toFixed(4))
+
+            // PEDMAS
+
+            console.log((10/3).toFixed(2))
+            
+            console.log(typeof 3)
+
+            // Array
+
+            let items = ['book', 'bag', 'shoes']
+
+            console.log(typeof items)
+
+            items.push('pencil')
+
+            console.log(items)
+
+            // push, unshift, shift, pop, splice, concat, slice, indexOf, includes
+
+            console.log(items.includes('socks'))
+
+            console.log(items.includes('book'))
+
+            // slicing an array
+
+            console.log(items.length)
+
+            items.splice(4,0, 'food', 'pen', 'socks')
+
+
+
+
+            
+             
+        </script>
+    </body>
+
+</html>
   <title>Login – co-Builders Hub</title>
   <link rel="icon" type="image/png" href="co-Builders_Logo__1_-removebg-preview-removebg-preview.png">
   
@@ -777,3 +927,4 @@ document.querySelector('.nav-invite').addEventListener('click', function() {
 </script>
 </body>
 </html>
+
