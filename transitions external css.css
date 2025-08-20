@@ -6,31 +6,54 @@ html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;font-family:sans-se
 
 #lets-co-build{
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 50px;
+  grid-template-columns: 1.5fr 2fr;
+  gap: 30px;
   position: relative;
+  padding-bottom: 100px;
+
+  .fellow-left_card{
+    width: 100%;
+  }
+
+  p:first-of-type{
+    font-size: 2rem;
+    text-align: center !important;
+    margin: 20px auto 10px;
+
+    @media (max-width: 600px){
+      font-size: 2rem;
+      
+    }
+  }
 
   @media (max-width: 600px){
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 }
 
 #co-build-inner-wrapper{
   margin-top: 150px;
   width: 100%;
+  display: grid;
+  gap: 50px;
   
 
-  .event_grid-card-tab1{
-      width: 100%;
-      background: darkblue;
+
+    .black-text{
       color: black;
-      padding: 30px;
-      margin-bottom: 20px;
-      
+    }
+
+    .visible-co-build{
+      display: flex;
+      padding: 30px 30px 100px;
+      border: 2px solid whitesmoke;
+      width: 80%;
+      margin: auto;
     }
 
     @media (max-width: 600px){
-      margin-top: 50px;
+      margin-top: 20px;
     }
 
 }
@@ -85,6 +108,7 @@ html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;font-family:sans-se
         padding: 50px 20px;
         width: 100%;
         font-size: 3.5rem !important;
+        text-align: center !important;
 
         @media (max-width: 600px){
           font-size: 3rem;
